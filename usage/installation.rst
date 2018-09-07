@@ -104,7 +104,7 @@ Building utilities
     
     > cd /nwprod
 
-* compile
+* compile::
 
     > ./build2.bash
 
