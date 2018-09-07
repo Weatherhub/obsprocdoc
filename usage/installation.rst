@@ -86,7 +86,13 @@ Building the gempak
 ===================
 
 * enter into gempak directory::
+
     > cd /nwprod/gempak/NAWIPS
 
 * setup the necessary environment variables::
+
     > . ./Gemenviron.profile
+
+* compile
+
+    > make everything
