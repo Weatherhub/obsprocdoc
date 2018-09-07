@@ -96,3 +96,26 @@ Building the gempak
 * compile
 
     > make everything
+
+Building utilities
+==================
+
+* enter into directory::
+    
+    > cd /nwprod
+
+* compile
+
+    > ./build2.bash
+
+Building obsproc
+================
+
+* enter into directory::
+
+    > cd /nwprod
+
+* compile::
+
+    > ./build_obsproc.bash
+
