@@ -4,7 +4,7 @@ Installation
 
 .. contents ::
 
-Installing the Singularity
+Installing Singularity
 ==========================
 
 The whole system requires to be run with *Singularity*. To install Singualrity:
@@ -20,7 +20,7 @@ The whole system requires to be run with *Singularity*. To install Singualrity:
 
 
 
-Building the NCEP libraries
+Building NCEP libraries
 ===========================
 
 * enter into NCEP libraries' directory::
@@ -82,7 +82,7 @@ Building the NCEP libraries
     ├── progress.stat
     └── sorc
 
-Building the gempak
+Building gempak
 ===================
 
 * enter into gempak directory::
