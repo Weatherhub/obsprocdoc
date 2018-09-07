@@ -81,3 +81,12 @@ Building the NCEP libraries
     ├── make.log
     ├── progress.stat
     └── sorc
+
+Building the gempak
+===================
+
+* ::
+    > cd /nwprod/gempak/NAWIPS
+
+* ::
+    > . ./Gemenviron.profile
