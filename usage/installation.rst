@@ -93,7 +93,7 @@ Building the gempak
 
     > . ./Gemenviron.profile
 
-* compile
+* compile::
 
     > make everything
 
