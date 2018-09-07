@@ -23,3 +23,10 @@ The whole system requires to be run with *Singularity*. To install Singualrity:
 Building the NCEP libraries
 ===========================
 
+* enter into NCEP libraries' directory::
+
+    > cd /nwprod/lib
+
+* compile the libraries::
+
+    > ./build1.bash
