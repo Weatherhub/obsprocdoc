@@ -29,7 +29,17 @@ CIMISS provides XML format data::
     <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="65536" Time_Dev_WQ="2975" Lat_Dev="-0.002" Lon_Dev="-0.048" PRS_HWC="250" GPH="11090" Heigh_Alti="999998" TEM="-35.7" DPT="-62.7" DTD="27" WIN_D="40" WIN_S="11" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
     <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="65536" Time_Dev_WQ="3248" Lat_Dev="-0.031" Lon_Dev="-0.08" PRS_HWC="200" GPH="12610" Heigh_Alti="999998" TEM="-46.7" DPT="-73.7" DTD="27" WIN_D="40" WIN_S="20" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
     <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="65536" Time_Dev_WQ="3585" Lat_Dev="-0.088" Lon_Dev="-0.121" PRS_HWC="150" GPH="14460" Heigh_Alti="999998" TEM="-61.3" DPT="999999" DTD="999999" WIN_D="35" WIN_S="23" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    
+
+.. note::
+
+    EVSS=65536 : Mandatory levels 
+
+
+XML extractor
+=============
+
+A python code is used to extract the desired information from this XML file.
+
 
 Source code
 ===========
