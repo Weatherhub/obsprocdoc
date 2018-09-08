@@ -174,7 +174,7 @@ Building obsproc
 
     > ./build_obsproc.bash
 
-* it compiles all the obsproc executables
+* it compiles all the obsproc executables::
 
     > tree -L 1 obsproc_*/exec
     obsproc_dump.v3.2.1/exec
