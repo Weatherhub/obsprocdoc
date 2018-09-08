@@ -21,7 +21,7 @@
 
 project = u'观测资料的解码、质控和格式转换'
 copyright = u'2018, 北京朗润知天科技有限公司'
-author = u'北京朗润知天科技有限公司'
+author = u'Longrun Weatherwise Technology LLC'
 
 # The short X.Y version
 version = u''
@@ -129,7 +129,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'ObsProc.tex', u'ObsProc Documentation',
-     u'北京朗润知天科技有限公司', 'manual'),
+     u'Longrun Weatherwise Technology LLC', 'manual'),
 ]
 
 
