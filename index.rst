@@ -12,6 +12,7 @@ Welcome to ObsProc's documentation!
 
    usage/installation
    usage/quickstart
+   decoders/upper
 
 Indices and tables
 ==================
