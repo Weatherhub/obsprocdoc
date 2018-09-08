@@ -18,6 +18,34 @@ The whole system requires to be run with *Singularity*. To install Singualrity:
 .. note::
     make sure your local nwprod directory is mounted as /nwprod in Singualrity container.
 
+* the directory structure is::
+
+    > cpaessxinzhang-mpro:LR-App-Store xinzhang$ tree -L 1 nwprod
+    nwprod
+    ├── build2.bash
+    ├── build_obsproc.bash
+    ├── com
+    ├── comGSIv3.6_EnKFv1.2
+    ├── dcom
+    ├── decoders
+    ├── doc
+    ├── exec
+    ├── fix -> /nwprod/decoders/decod_shared/fix
+    ├── gempak
+    ├── lib
+    ├── obsproc_dump.v3.2.1
+    ├── obsproc_dump_post.v3.1.0
+    ├── obsproc_global.v3.1.1
+    ├── obsproc_prep.v5.0.0
+    ├── obsproc_prep_post.v3.0.0
+    ├── obsproc_rap.v3.0.0
+    ├── obsproc_shared
+    ├── run_rap_obsproc.bash
+    ├── sorc
+    ├── tmpprod
+    ├── ush
+    ├── util
+    └── versions
 
 
 Building NCEP libraries
@@ -117,7 +145,7 @@ Building utilities
 
     > ./build2.bash
 
-* it will produce some utilities related to the grib file operators::
+* it compiles some utilities related to the grib file operators::
 
     > tree -L 1 util/exec/
     util/exec/
@@ -146,7 +174,7 @@ Building obsproc
 
     > ./build_obsproc.bash
 
-* it compile all the obsproc executables
+* it compiles all the obsproc executables
 
     > tree -L 1 obsproc_*/exec
     obsproc_dump.v3.2.1/exec
@@ -203,7 +231,7 @@ Building decoders
 
     > ./build.bash
 
-* it compile the decoders for different type obs.::
+* it compiles the decoders for different type obs.::
 
     > tree -L 1 -I "tmp|*tbl|*headers|*log|fort*|*ksh|bufrtab*" decoders/decod_*/exec
     decoders/decod_dcacft/exec
@@ -335,4 +363,3 @@ Building decoders
     └── decod_dcusnd
     decoders/decod_dczsfc/exec
     └── decod_dczsfc
-    
