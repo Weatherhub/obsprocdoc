@@ -97,7 +97,7 @@ Building `gempak <https://www.unidata.ucar.edu/software/gempak/>`_
 
     > make everything
 
-* if compiled successfully, there are lots of libs which will be used by decoders::
+* it makes lots of libs which will be used by decoders::
 
     > tree -L 1 os/linux64
     os/linux64
@@ -110,12 +110,30 @@ Building utilities
 ==================
 
 * enter into directory::
-    
+
     > cd /nwprod
 
 * compile::
 
     > ./build2.bash
+
+* it will produce some utilities related to the grib file operators::
+
+    > tree -L 1 util/exec/
+    util/exec/
+    ├── cnvgrib
+    ├── copygb
+    ├── copygb2
+    ├── cwordsh
+    ├── debufr
+    ├── grb2index
+    ├── grbindex
+    ├── ndate
+    ├── nhour
+    ├── tocgrib
+    ├── tocgrib2
+    ├── wgrib
+    └── wgrib2
 
 Building obsproc
 ================
@@ -128,3 +146,193 @@ Building obsproc
 
     > ./build_obsproc.bash
 
+* it compile all the obsproc executables
+
+    > tree -L 1 obsproc_*/exec
+    obsproc_dump.v3.2.1/exec
+    ├── bufr_chkbfr
+    ├── bufr_combfr
+    ├── bufr_dcodwindsat
+    ├── bufr_dumpmd
+    ├── bufr_dupair
+    ├── bufr_dupcor
+    ├── bufr_dupmar
+    ├── bufr_dupmrg
+    ├── bufr_duprad
+    ├── bufr_dupsat
+    ├── bufr_dupshp
+    ├── bufr_dupsst
+    ├── bufr_edtbfr
+    ├── bufr_geofil
+    ├── bufr_quipc
+    ├── bufr_raddate
+    ├── bufr_supertmi
+    ├── prepobs_prepssmi
+    └── wave_dcodquikscat
+    obsproc_dump_post.v3.1.0/exec
+    ├── bufr_datacount
+    └── bufr_listdumps
+    obsproc_prep.v5.0.0/exec
+    ├── prepobs_cqcbufr
+    ├── prepobs_cqcvad
+    ├── prepobs_glerladj
+    ├── prepobs_listheaders
+    ├── prepobs_monoprepbufr
+    ├── prepobs_mpcopybufr
+    ├── prepobs_oiqcbufr
+    ├── prepobs_prepacpf
+    ├── prepobs_prepacqc
+    ├── prepobs_prepanow
+    ├── prepobs_prepdata
+    ├── prepobs_prevents
+    ├── prepobs_profcqc
+    └── syndat_syndata
+    obsproc_prep_post.v3.0.0/exec
+    ├── gdascounts_ave
+    ├── global_postevents
+    └── timetwin
+
+Building decoders
+=================
+
+* enter into directory::
+
+    > cd /nwprod/decoders/decod_shared
+
+* compile::
+
+    > ./build.bash
+
+* it compile the decoders for different type obs.::
+
+    > tree -L 1 -I "tmp|*tbl|*headers|*log|fort*|*ksh|bufrtab*" decoders/decod_*/exec
+    decoders/decod_dcacft/exec
+    └── decod_dcacft
+    decoders/decod_dcacft_v3.3.0/exec
+    └── decod_dcacft
+    decoders/decod_dcaxbt/exec
+    └── decod_dcaxbt
+    decoders/decod_dcaxbt_v3.0.0/exec
+    └── decod_dcaxbt
+    decoders/decod_dcbthy/exec
+    └── decod_dcbthy
+    decoders/decod_dcbthy_v3.0.0/exec
+    └── decod_dcbthy
+    decoders/decod_dccgrd/exec
+    └── decod_dccgrd
+    decoders/decod_dccgrd_v3.0.0/exec
+    └── decod_dccgrd
+    decoders/decod_dccimiss/exec
+    └── decod_dccimiss
+    decoders/decod_dccimiss_v3.0.0/exec
+    └── decod_dccimiss
+    decoders/decod_dccimissupr/exec
+    ├── decod_dccmissupr
+    └── decod_dcusnd
+    decoders/decod_dccoop/exec
+    decoders/decod_dccoop_v3.0.0/exec
+    decoders/decod_dccrn/exec
+    decoders/decod_dccrn_v3.0.0/exec
+    decoders/decod_dccsev/exec
+    └── decod_dccsev
+    decoders/decod_dccsev_v3.0.0/exec
+    └── decod_dccsev
+    decoders/decod_dccsjp/exec
+    decoders/decod_dccsjp_v3.0.0/exec
+    decoders/decod_dcdrbu/exec
+    └── decod_dcdrbu
+    decoders/decod_dcdrbu_v3.0.0/exec
+    └── decod_dcdrbu
+    decoders/decod_dcelrw/exec
+    └── decod_dcelrw
+    decoders/decod_dcelrw_v3.0.0/exec
+    └── decod_dcelrw
+    decoders/decod_dcepfl/exec
+    └── decod_dcepfl
+    decoders/decod_dcepfl_v3.0.0/exec
+    └── decod_dcepfl
+    decoders/decod_dcgpsw/exec
+    └── decod_dcgpsw
+    decoders/decod_dcgpsw_v3.0.0/exec
+    └── decod_dcgpsw
+    decoders/decod_dchydr/exec
+    decoders/decod_dchydr_v3.0.0/exec
+    decoders/decod_dcigdr/exec
+    └── decod_dcigdr
+    decoders/decod_dcigdr_v3.0.0/exec
+    └── decod_dcigdr
+    decoders/decod_dcjpfl/exec
+    └── decod_dcjpfl
+    decoders/decod_dcjpfl_v3.0.0/exec
+    └── decod_dcjpfl
+    decoders/decod_dckora/exec
+    └── decod_dckora
+    decoders/decod_dckora_v3.0.0/exec
+    └── decod_dckora
+    decoders/decod_dclsfc/exec
+    └── decod_dccimiss
+    decoders/decod_dclsfc_v3.0.0/exec
+    └── decod_dccimiss
+    decoders/decod_dcmap/exec
+    decoders/decod_dcmap_v3.0.0/exec
+    decoders/decod_dcmeso/exec
+    decoders/decod_dcmeso_v3.0.0/exec
+    decoders/decod_dcmetr/exec
+    └── decod_dcmetr
+    decoders/decod_dcmetr_v3.1.0/exec
+    └── decod_dcmetr
+    decoders/decod_dcmopf/exec
+    └── decod_dcmopf
+    decoders/decod_dcmopf_v3.0.0/exec
+    └── decod_dcmopf
+    decoders/decod_dcmssf/exec
+    └── decod_dcmssf
+    decoders/decod_dcmssf_v3.0.0/exec
+    └── decod_dcmssf
+    decoders/decod_dcnxrd/exec
+    └── decod_dcnxrd
+    decoders/decod_dcnxrd_v3.0.0/exec
+    └── decod_dcnxrd
+    decoders/decod_dcozon/exec
+    └── decod_dcozon
+    decoders/decod_dcozon_v3.0.0/exec
+    └── decod_dcozon
+    decoders/decod_dcp3rd/exec
+    └── decod_dcp3rd
+    decoders/decod_dcp3rd_v3.0.0/exec
+    └── decod_dcp3rd
+    decoders/decod_dcpflr/exec
+    └── decod_dcpflr
+    decoders/decod_dcpflr_v3.0.0/exec
+    └── decod_dcpflr
+    decoders/decod_dcrast/exec
+    └── decod_dcrast
+    decoders/decod_dcrast_v3.0.0/exec
+    └── decod_dcrast
+    decoders/decod_dcrocc/exec
+    └── decod_dcrocc
+    decoders/decod_dcrocc_v3.0.0/exec
+    └── decod_dcrocc
+    decoders/decod_dcscd/exec
+    └── decod_dcscd
+    decoders/decod_dcscd_v3.0.0/exec
+    └── decod_dcscd
+    decoders/decod_dcsynp/exec
+    └── decod_dcsynp
+    decoders/decod_dcsynp_v3.7.0/exec
+    └── decod_dcsynp
+    decoders/decod_dctama/exec
+    decoders/decod_dctama_v3.0.0/exec
+    decoders/decod_dctidg/exec
+    └── decod_dctidg
+    decoders/decod_dctidg_v3.0.0/exec
+    └── decod_dctidg
+    decoders/decod_dcusnd/exec
+    ├── decod_dccmissupr
+    └── decod_dcusnd
+    decoders/decod_dcusnd_v3.0.0/exec
+    ├── decod_dccmissupr
+    └── decod_dcusnd
+    decoders/decod_dczsfc/exec
+    └── decod_dczsfc
+    
