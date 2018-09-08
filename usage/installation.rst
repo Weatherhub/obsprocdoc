@@ -33,7 +33,7 @@ Building NCEP libraries
 
 * If successfully compiled::
 
-    > cpaessxinzhang-mpro:lib xinzhang$ tree -L 1
+    > tree -L 1
     .
     ├── build1.bash
     ├── clean.bash
@@ -82,8 +82,8 @@ Building NCEP libraries
     ├── progress.stat
     └── sorc
 
-Building gempak
-===================
+Building `gempak <https://www.unidata.ucar.edu/software/gempak/>`_
+==================================================================
 
 * enter into gempak directory::
 
@@ -96,6 +96,15 @@ Building gempak
 * compile::
 
     > make everything
+
+* if compiled successfully, there are lots of libs which will be used by decoders::
+
+    > tree -L 1 os/linux64
+    os/linux64
+    ├── bin
+    ├── include
+    ├── lib
+    └── share
 
 Building utilities
 ==================
