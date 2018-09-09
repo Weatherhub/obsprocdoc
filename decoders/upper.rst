@@ -32,13 +32,16 @@ CIMISS provides XML format data::
 
 .. note::
 
-    EVSS=65536 : Mandatory levels 
+    EVSS="131072" : Surface level
+    EVSS="65536"  : Mandatory levels
 
 
 XML extractor
 =============
 
-A python code is used to extract the desired information from this XML file.
+A python code is used to extract the desired information from this XML file::
+
+    > python read_cimiss_upr.py > upr_data
 
 
 Source code
@@ -48,3 +51,8 @@ Source code
 
     > cd /nwprod/decoders/decod_dccimissupr/sorc
 
+
+PrepBUFR Processing
+===================
+
+Please refer to `PREPBUFR Processing at NCEP <http://www.emc.ncep.noaa.gov/mmb/data_processing/prepbufr.doc/document.htm>`_
