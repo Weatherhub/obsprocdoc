@@ -34,7 +34,8 @@ CIMISS provides XML format data::
 
     EVSS="131072" : Surface level
     EVSS="65536"  : Mandatory levels
-
+    EVSS="2048"   : Significant levels wind
+    EVSS="8192"   : Significant levels temperature
 
 XML extractor
 =============
