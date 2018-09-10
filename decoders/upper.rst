@@ -275,7 +275,8 @@ Decode and convert to BUFR format
     * -b 240 : Number of hours to decode prior to "current" time (default)
     * The observations with date/time between **current time** - 240 hours and  **current time** + 3 are **kept**.
 
- 3. The generated BUFR format file will be saved at::
+ 3. The generated BUFR format file will be saved at
+ ::
 
     > ls -la tmp/BUFR.0.raob.1.12381.1536602459.61
     -rw-rw-r-- 1 vagrant vagrant 20360 Sep 10 18:01 tmp/BUFR.0.raob.1.12381.1536602459.61
