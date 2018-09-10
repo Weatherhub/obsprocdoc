@@ -268,7 +268,7 @@ Decode and convert to BUFR format
 
 3. The generated BUFR format file will be saved at::
 
-    > ls -al /nwprod/dcom/us007003/20180901/b002/xx001 
+    > ls -al /nwprod/dcom/us007003/20180901/b002/xx001
     -rw-r--r-- 1 vagrant vagrant 36304 Sep 10 16:29 /nwprod/dcom/us007003/20180901/b002/xx001
 
 
