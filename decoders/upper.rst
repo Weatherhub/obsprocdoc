@@ -259,34 +259,40 @@ Decode and convert to BUFR format
 
     > cat run.ksh
     #!/bin/bash
-    export DBNBUFRT=120
+    export DBNBUFRT=120    # control the frequency to flush the bufr
     export TRANJB=/nwprod/ush/tranjb
     export tank_dir=/nwprod/dcom/us007003
     export DBNROOT=`pwd`
     rm tmp/*
     rm decod_dccimissupr.log
-    ./decod_dccmissupr -d decod_dccimissupr.log -c 180901/1200 sonde.land.tbl sonde.ship.tbl bufrtab.002
+    ./decod_dccmissupr -d decod_dccimissupr.log -b 240 -c 180901/1200 sonde.land.tbl sonde.ship.tbl bufrtab.002
     ls -la tmp/*
-
-    BUFR_FILES=$(echo tmp/BUFR*)
-    echo ${BUFR_FILES}
-
-    for file in ${BUFR_FILES}
-    do
-      ${TRANJB} ${tank_dir} ${file}
-    done
 
 .. note::
 
-    180901/1200 (201809011200 UTC) is the central time used to filter the obs. data in upr_data.
+    * -c 180901/1200 : Set the "current" time (201809011200) used to calculate the time departures of the obs. data.
+    * -b 240 : Number of hours to decode prior to "current" time
+    * Define **System Time** is the system time when the decoder is running.
+    * The observations with date/time between **Current Time** - 240 hours and  **System Time** + 3 are **kept**.
 
-3. The generated BUFR format file will be saved at **Tanks**::
+ 3. The generated BUFR format file will be saved at::
 
+    > ls -la tmp/BUFR.0.raob.1.12381.1536602459.61 
+    -rw-rw-r-- 1 vagrant vagrant 20360 Sep 10 18:01 tmp/BUFR.0.raob.1.12381.1536602459.61
+
+
+Transfer bufr data to BUFR Tanks
+================================
+* put data in BUFR **tanks**::
+
+    > /nwprod/ush/tranjb /nwprod/dcom/us007003 tmp/BUFR.0.raob.1.12381.1536602459.61
     > ls -al /nwprod/dcom/us007003/20180901/b002/xx001
     -rw-r--r-- 1 vagrant vagrant 36304 Sep 10 16:29 /nwprod/dcom/us007003/20180901/b002/xx001
 
 .. note::
 
+    * Define **Current Time** is the system time when the tranjb is running. 
+    * Only observations with date/time between **Current Time** - 10 days and **Current Time** + 12 hours are kept.
     * /nwprod/dcom/us007003/yyyymmdd/bmmm/xxsss (where mmm is WMO BUFR message type and xxx is local BUFR message subtype)
     * 002.001 (in dump group mnemonic adpupa): Fixed radiosonde land reports
     * BUFR format
@@ -303,6 +309,7 @@ Some decoding tips
 ==================
 
 1. How to decide *VSIG*
+
     According to the BUFR code FLAG table, the *VSIG* should be assigned an appropriate value based on the observational type::
 
         008001 VERTICAL SOUNDING SIGNIFICANCE (7-BIT FLAG TABLE)
