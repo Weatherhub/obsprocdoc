@@ -261,7 +261,8 @@ Decode and convert to BUFR format
     #!/bin/bash
     export DBNBUFRT=120    # control the frequency to flush the bufr
     export TRANJB=/nwprod/ush/tranjb
-    export tank_dir=/nwprod/dcom/us007003
+    export tank_dir=/nwprod/dcom/us007003    # used by TRANJB
+    export SCREEN="OFF"    # Turn off the time screen and keep all data, used by TRANJB 
     export DBNROOT=`pwd`
     rm tmp/*
     rm decod_dccimissupr.log
@@ -270,10 +271,9 @@ Decode and convert to BUFR format
 
 .. note::
 
-    * -c 180901/1200 : Set the "current" time (201809011200) used to calculate the time departures of the obs. data.
+    * -c 180901/1200 : Set the **current time** (201809011200) used to calculate the time departures of the obs. data.
     * -b 240 : Number of hours to decode prior to "current" time
-    * Define **System Time** is the system time when the decoder is running.
-    * The observations with date/time between **Current Time** - 240 hours and  **System Time** + 3 are **kept**.
+    * The observations with date/time between **current time** - 240 hours and  **current time** + 3 are **kept**.
 
  3. The generated BUFR format file will be saved at::
 
@@ -291,8 +291,10 @@ Transfer bufr data to BUFR Tanks
 
 .. note::
 
-    * Define **Current Time** is the system time when the tranjb is running. 
-    * Only observations with date/time between **Current Time** - 10 days and **Current Time** + 12 hours are kept.
+    * If environmental variable **SCREEN=ON**
+        * Define **Run Time** is the system time when the tranjb is running.
+        * Only observations with date/time between **Run Time** - 10 days and **Run Time** + 12 hours are kept.
+    * Fir historic run, set **SCREEN=OFF**
     * /nwprod/dcom/us007003/yyyymmdd/bmmm/xxsss (where mmm is WMO BUFR message type and xxx is local BUFR message subtype)
     * 002.001 (in dump group mnemonic adpupa): Fixed radiosonde land reports
     * BUFR format
