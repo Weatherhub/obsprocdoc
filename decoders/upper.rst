@@ -294,9 +294,9 @@ Decode and convert to BUFR format
     * No QC (other than rudimentary checks inside decoders)
     * No duplicate checking
     * Interested users can use utility *debufr* to check the content of the bufr file::
-        
-        > /nwprod/util/execdebufr /nwprod/dcom/us007003/20180901/b002/xx001 
-    
+
+        > /nwprod/util/execdebufr /nwprod/dcom/us007003/20180901/b002/xx001
+
     the output is on debufr.out.
 
 
