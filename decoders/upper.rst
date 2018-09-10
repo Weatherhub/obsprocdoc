@@ -98,7 +98,7 @@ XML format data is looks like::
 .. note::
 
     The above sample include Mandatory levels reports and Significant levels reports, CIMISS uses *EVSS* to identify the type.
-    
+
     * EVSS="131072" : Surface level
     * EVSS="65536"  : Mandatory levels
     * EVSS="2048"   : Significant levels wind
@@ -178,10 +178,48 @@ the content of **upr_data** is::
 Source code
 ===========
 
-* Source code directory::
+Source code directory::
 
     > cd /nwprod/decoders/decod_dccimissupr/sorc
 
+Subroutines to decode Radiosonde data
+    * uadcod_mandatory.f
+    * uadcod_significant_temp.f
+    * uadcod_significant_wind.f
+
+The top control is in **dccimissupr.c**, the code snippet is.
+::
+    /*
+    ** Call the decoding routine.
+    **
+    ** Change this function call and define command for the
+    ** specific decoder.
+    */
+
+    #ifdef UNDERSCORE
+    #define ua_dcod_mandatory ua_dcod_mandatory_
+    #define ua_dcod_significant_wind ua_dcod_significant_wind_
+    #define ua_dcod_significant_temp ua_dcod_significant_temp_
+    #endif
+
+    	ua_dcod_mandatory ( curtim, lndtbl, shptbl, bufrtb, &nhours, &iret, 
+    		  strlen(curtim), strlen(lndtbl),
+    		  strlen(shptbl), strlen(bufrtb) );
+
+    	ua_dcod_significant_wind ( curtim, lndtbl, shptbl, bufrtb, &nhours, &iret, 
+    		  strlen(curtim), strlen(lndtbl),
+    		  strlen(shptbl), strlen(bufrtb) );
+
+    	ua_dcod_significant_temp ( curtim, lndtbl, shptbl, bufrtb, &nhours, &iret, 
+    		  strlen(curtim), strlen(lndtbl),
+    		  strlen(shptbl), strlen(bufrtb) );
+
+    /*
+    **	Send shut down message and close the log files.
+    */
+    	dc_exit ( &iret );
+
+    }
 
 PrepBUFR Processing
 ===================
