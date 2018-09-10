@@ -178,16 +178,16 @@ the content of **upr_data** is::
 Source code
 ===========
 
-Source code directory::
+1. Source code directory::
 
     > cd /nwprod/decoders/decod_dccimissupr/sorc
 
-Subroutines to decode Radiosonde data
+2. Subroutines to decode Radiosonde data
     * uadcod_mandatory.f
     * uadcod_significant_temp.f
     * uadcod_significant_wind.f
 
-The top control is in **dccimissupr.c**, the code snippet is.
+3. The top control is in **dccimissupr.c**, the code snippet is.
 ::
     /*
     ** Call the decoding routine.
@@ -223,7 +223,53 @@ The top control is in **dccimissupr.c**, the code snippet is.
 
 .. note::
 
-    The *lndtbl*, *shptbl* are not used, although they are required as arguments and read in.
+    * The *lndtbl*, *shptbl* are not used, although they are required as arguments and read in.
+    * The path and file name of *upr_data* file are hard coded in the subroutines.
+
+4. Compile the code
+::
+
+    > make
+
+Decode and convert to BUFR format
+=================================
+
+1.  enter into the exec directory
+::
+
+    > cd /nwprod/decoders/decod_dccimissupr/exec
+
+2. run the command
+::
+
+    > run.ksh
+    > cat run.ksh
+    #!/bin/bash
+    export DBNBUFRT=120
+    export TRANJB=/nwprod/ush/tranjb
+    export tank_dir=/nwprod/dcom/us007003
+    export DBNROOT=`pwd`
+    rm tmp/*
+    rm decod_dccimissupr.log
+    ./decod_dccmissupr -d decod_dccimissupr.log -c 180901/1200 sonde.land.tbl sonde.ship.tbl bufrtab.002
+    ls -la tmp/*
+
+    BUFR_FILES=$(echo tmp/BUFR*)
+    echo ${BUFR_FILES}
+
+    for file in ${BUFR_FILES}
+    do
+      ${TRANJB} ${tank_dir} ${file}
+    done
+
+.. note::
+
+    180901/1200 (201809011200 UTC) is the central time used to filter the obs. data in upr_data.
+
+3. The generated BUFR format file will be saved at::
+
+    > ls -al /nwprod/dcom/us007003/20180901/b002/xx001 
+    -rw-r--r-- 1 vagrant vagrant 36304 Sep 10 16:29 /nwprod/dcom/us007003/20180901/b002/xx001
 
 
 PrepBUFR Processing
