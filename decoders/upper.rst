@@ -272,12 +272,12 @@ Decode and convert to BUFR format
 .. note::
 
     * -c 180901/1200 : Set the **current time** (201809011200) used to calculate the time departures of the obs. data.
-    * -b 240 : Number of hours to decode prior to "current" time
+    * -b 240 : Number of hours to decode prior to "current" time (default)
     * The observations with date/time between **current time** - 240 hours and  **current time** + 3 are **kept**.
 
  3. The generated BUFR format file will be saved at::
 
-    > ls -la tmp/BUFR.0.raob.1.12381.1536602459.61 
+    > ls -la tmp/BUFR.0.raob.1.12381.1536602459.61
     -rw-rw-r-- 1 vagrant vagrant 20360 Sep 10 18:01 tmp/BUFR.0.raob.1.12381.1536602459.61
 
 
@@ -286,15 +286,16 @@ Transfer bufr data to BUFR Tanks
 * put data in BUFR **tanks**::
 
     > /nwprod/ush/tranjb /nwprod/dcom/us007003 tmp/BUFR.0.raob.1.12381.1536602459.61
+
     > ls -al /nwprod/dcom/us007003/20180901/b002/xx001
     -rw-r--r-- 1 vagrant vagrant 36304 Sep 10 16:29 /nwprod/dcom/us007003/20180901/b002/xx001
 
 .. note::
 
-    * If environmental variable **SCREEN=ON**
+    * if environmental variable **SCREEN=ON** :
         * Define **Run Time** is the system time when the tranjb is running.
         * Only observations with date/time between **Run Time** - 10 days and **Run Time** + 12 hours are kept.
-    * Fir historic run, set **SCREEN=OFF**
+    * for retrospective run, set **SCREEN=OFF**
     * /nwprod/dcom/us007003/yyyymmdd/bmmm/xxsss (where mmm is WMO BUFR message type and xxx is local BUFR message subtype)
     * 002.001 (in dump group mnemonic adpupa): Fixed radiosonde land reports
     * BUFR format
