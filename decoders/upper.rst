@@ -299,6 +299,20 @@ Decode and convert to BUFR format
 
       the output is in *debufr.out*.
 
+Some decoding tips
+==================
+
+1. How to decide *VSIG*
+    According to the BUFR code FLAG table, the *VSIG* should be assigned an appropriate value based on the observational type::
+
+        008001 VERTICAL SOUNDING SIGNIFICANCE (7-BIT FLAG TABLE)
+        1  SURFACE                            1 0 0 0 0 0 0 = 64
+        2  STANDARD                           0 1 0 0 0 0 0 = 32
+        3  TROPOPAUSE                         0 0 1 0 0 0 0 = 16
+        4  MAX WIND                           0 0 0 1 0 0 0 = 8
+        5  SIG TEMP                           0 0 0 0 1 0 0 = 4
+        6  SIG WIND                           0 0 0 0 0 1 0 = 2
+
 
 PrepBUFR Processing
 ===================
