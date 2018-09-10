@@ -12,7 +12,9 @@ Welcome to ObsProc's documentation!
 
    usage/installation
    usage/quickstart
-   decoders/upper
+   decoders/radiosonde
+   decoders/aircraft
+   reference/reference
 
 Indices and tables
 ==================
