@@ -238,11 +238,23 @@ Decode and convert to BUFR format
 ::
 
     > cd /nwprod/decoders/decod_dccimissupr/exec
+    > ls -la
+    total 964
+    drwxr-xr-x 1 vagrant vagrant    288 Sep 10 16:31 .
+    drwxr-xr-x 1 vagrant vagrant    160 Sep  8 21:04 ..
+    lrwxr-xr-x 1 vagrant vagrant     34 Aug 30 04:15 bufrtab.002 -> ../../decod_shared/fix/bufrtab.002
+    -rw-r--r-- 1 vagrant vagrant    449 Sep 10 16:29 decod_dccimissupr.log
+    -rwxr-xr-x 1 vagrant vagrant 947632 Sep 10 16:19 decod_dccmissupr
+    -rwxr-xr-x 1 vagrant vagrant    389 Sep  9 05:40 run.ksh
+    lrwxr-xr-x 1 vagrant vagrant     30 Aug 30 04:15 sonde.land.tbl -> ../dictionaries/sonde.land.tbl
+    lrwxr-xr-x 1 vagrant vagrant     30 Aug 30 04:15 sonde.ship.tbl -> ../dictionaries/sonde.ship.tbl
+    drwxr-xr-x 1 vagrant vagrant     96 Sep 10 16:29 tmp
 
-2. run the command
+2. run the decoder script
 ::
 
     > run.ksh
+    
     > cat run.ksh
     #!/bin/bash
     export DBNBUFRT=120
