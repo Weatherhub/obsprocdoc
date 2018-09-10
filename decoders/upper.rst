@@ -297,7 +297,7 @@ Decode and convert to BUFR format
 
         > /nwprod/util/execdebufr /nwprod/dcom/us007003/20180901/b002/xx001
 
-      the output is on *debufr.out*.
+    the output is in *debufr.out*.
 
 
 PrepBUFR Processing
