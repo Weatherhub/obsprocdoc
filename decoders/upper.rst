@@ -254,7 +254,7 @@ Decode and convert to BUFR format
 ::
 
     > run.ksh
-    
+
     > cat run.ksh
     #!/bin/bash
     export DBNBUFRT=120
@@ -278,10 +278,19 @@ Decode and convert to BUFR format
 
     180901/1200 (201809011200 UTC) is the central time used to filter the obs. data in upr_data.
 
-3. The generated BUFR format file will be saved at::
+3. The generated BUFR format file will be saved at **Tanks**::
 
     > ls -al /nwprod/dcom/us007003/20180901/b002/xx001
     -rw-r--r-- 1 vagrant vagrant 36304 Sep 10 16:29 /nwprod/dcom/us007003/20180901/b002/xx001
+
+.. note::
+
+    * /nwprod/dcom/us007003/yyyymmdd/bmmm/xxsss (where mmm is WMO BUFR message type and xxx is local BUFR message subtype)
+    * 002.001 (in dump group mnemonic adpupa): Fixed radiosonde land reports
+    * BUFR format
+    * Arranged by UTC day and continuously grow throughout the day, if you run decoders many time, the content of the file will grow
+    * No QC (other than rudimentary checks inside decoders)
+    * No duplicate checking
 
 
 PrepBUFR Processing
