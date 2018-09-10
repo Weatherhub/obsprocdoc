@@ -221,6 +221,11 @@ The top control is in **dccimissupr.c**, the code snippet is.
 
     }
 
+.. note::
+
+    The *lndtbl*, *shptbl* are not used, although they are required as arguments and read in.
+
+
 PrepBUFR Processing
 ===================
 
