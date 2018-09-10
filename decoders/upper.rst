@@ -98,6 +98,7 @@ XML format data is looks like::
 .. note::
 
     The above sample include Mandatory levels reports and Significant levels reports, CIMISS uses *EVSS* to identify the type.
+    
     * EVSS="131072" : Surface level
     * EVSS="65536"  : Mandatory levels
     * EVSS="2048"   : Significant levels wind
@@ -118,11 +119,11 @@ The information we want to extract from XML is.
 ::
 
     for item in doc['DS']['R']:
-    print item['@Station_Id_d'], item['@EVSS'], item['@Lat'], item['@Lon'], item['@Alti'], \
-    item['@Year'], item['@Mon'], item['@Day'], item['@Hour'], item['@Min'], item['@Second'], \
-    item['@PRS_HWC'], item['@GPH'], item['@TEM'], item['@DPT'], item['@WIN_D'], item['@WIN_S']
+        print item['@Station_Id_d'], item['@EVSS'], item['@Lat'], item['@Lon'], item['@Alti'], \
+        item['@Year'], item['@Mon'], item['@Day'], item['@Hour'], item['@Min'], item['@Second'], \
+        item['@PRS_HWC'], item['@GPH'], item['@TEM'], item['@DPT'], item['@WIN_D'], item['@WIN_S']
 
-the content of upr_data is::
+the content of **upr_data** is::
 
     > less upr_data
     56046 131072 33.7667 99.65 3968 2018 9 1 11 16 0 631 999999 10.2 8.8 0 0
