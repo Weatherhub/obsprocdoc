@@ -14,6 +14,7 @@ Welcome to ObsProc's documentation!
    usage/quickstart
    decoders/radiosonde
    decoders/aircraft
+   dump/dump
    reference/reference
 
 Indices and tables
