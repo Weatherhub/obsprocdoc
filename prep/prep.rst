@@ -7,27 +7,27 @@ PREPBUFR Processing
 Purpose
 =======
 
-* The "PREPBUFR" processing is the final step in preparing the majority of conventional observational data for assimilation
+* The "PREPBUFR" processing is the final step in preparing the majority of conventional observational data for assimilation \
 into the various analyses.
 
-* This step involves the execution of series of programs designed to assemble observations dumped from a number
+* This step involves the execution of series of programs designed to assemble observations dumped from a number \
  of on-line decoder databases:
 
-    * encode information about the observational error for each data type as well the
+    * encode information about the observational error for each data type as well the \
      background (first guess) interpolated to each data location
     * perform both rudimentary multi-platform quality control and more complex platform-specific quality control
     * store the output in a monolithic BUFR file, known as PREPBUFR.
 
 * Generated on production machine in each network from conventional data dump files
 
-    * adpsfc, adpupa, aircar, aircft, ascatw, atovs, goesnd, gpsipw, msonet, proflr, rassda, satwnd (except for GFS/GDAS),
+    * adpsfc, adpupa, aircar, aircft, ascatw, atovs, goesnd, gpsipw, msonet, proflr, rassda, satwnd (except for GFS/GDAS), \
      sfcshp, vadwnd, wndsat
 
 * Network-specific parm cards control processing
 * Structure defined by input PrepBUFR mnemonic table
 * BUFR message types can include:
 
-    * ADPUPA, AIRCAR, AIRCFT, SATWND, PROFLR, VADWND, SATEMP, ADPSFC, SFCSHP, SFCBOG, SPSSMI, SYNDAT, ERS1DA,
+    * ADPUPA, AIRCAR, AIRCFT, SATWND, PROFLR, VADWND, SATEMP, ADPSFC, SFCSHP, SFCBOG, SPSSMI, SYNDAT, ERS1DA, \
      GOESND, QKSWND, MSONET, GPSIPW, RASSDA, WDSATR, ASCATW (what is present depends on the network)
     * Each message type has its own BUFR structure as defined in the PrepBUFR mnemonic table
 
