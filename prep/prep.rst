@@ -7,30 +7,20 @@ Prep
 Purpose
 =======
 
-* BUFR format
+* BUFR
 
-* Generated from “tanks” at each network data cutoff time
+* Generated on production machine in each network from conventional data dump files
 
-* Time-windowed
+    – adpsfc, adpupa, aircar, aircft, ascatw, atovs, goesnd, gpsipw, msonet, proflr, rassda, satwnd (except for GFS/GDAS), sfcshp, vadwnd, wndsat
 
-    * NET=rap : +/- 1.0 hour
+* Network-specific parm cards control processing
 
-* Geographically filtered
+* Structure defined by input PrepBUFR mnemonic table
 
-    * environmental variable "**LALO=0*" is used to turn off the filter
+* BUFR message types can include:
 
-* Duplicate checked
-
-* QC: SDM purge (or keep) flags, reject list flags
-
-    * /nwprod/dcom/us007003/sdmedit can be used to filtered out specific reports
-
-* The product is /nwprod/com/NET/prod/RUN.yyyymmdd/MODEL.tcycz.TYPE.tmMM.bufr_d, where:
-
-    * **NET(RUN/MODEL)** is either: cdas(cdas/cdas), cfs(cdas/cdas1),dump(dump/dump), gfs(gdas/gdas1), gfs(gfs/gfs), nam(nam/nam), nam(ndas/ndas), rap(rap/rap), rap(rap_p/rap_p), rtma(rtma/rtma)
-    * **cyc** is cycle (hourly for NET=dump, rap, rtma; 00, 06, 12, 18 all others)
-    * **MM** is 00 for all types except RUN/MODEL=ndas/ndas where it can be 12, 09, 06 or 03
-    * **TYPE** is either: 1bamua, 1bamub, 1bhrs3, 1bhrs4, 1bmhs, adpsfc, adpupa, aircar, aircft, airsev, ascatt, ascatw, atms, atovs, avcsam, avcspm, bathy, cris, esamua, esamub, eshrs3, esmhs, geoimr, goesfv, goesnd, gome, gpsipw, gpsro, lghtng, lgycld, mls, msonet, mtiasi, nexrad, omi, osbuv8, proflr, radwnd, rassda, satwnd, sevcsr, sfcshp, sptrmm, ssmisu, tesac, trkob, trmm, vadwnd, wdsatr, wndsat (types actually dumped depend upon the network)
+    – ADPUPA, AIRCAR, AIRCFT, SATWND, PROFLR, VADWND, SATEMP, ADPSFC, SFCSHP, SFCBOG, SPSSMI, SYNDAT, ERS1DA, GOESND, QKSWND, MSONET, GPSIPW, RASSDA, WDSATR, ASCATW (what is present depends on the network)
+    – Each message type has its own BUFR structure as defined in the PrepBUFR mnemonic table 
 
 
 
