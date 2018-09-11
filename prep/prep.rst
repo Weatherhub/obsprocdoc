@@ -1,5 +1,5 @@
 ====
-Dump
+Prep
 ====
 
 .. contents ::
@@ -34,10 +34,6 @@ Purpose
 
 
 
-Dump Procedure
+Prep Procedure
 ==============
-
-For each type of observation, the following steps are followed:
-
-1. 
 

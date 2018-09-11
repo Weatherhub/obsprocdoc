@@ -15,6 +15,7 @@ Welcome to ObsProc's documentation!
    decoders/radiosonde
    decoders/aircraft
    dump/dump
+   prep/prep
    reference/reference
 
 Indices and tables
