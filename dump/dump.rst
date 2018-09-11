@@ -1,5 +1,11 @@
+====
 Dump
 ====
+
+.. contents ::
+
+Purpose
+=======
 
 * BUFR format
 
