@@ -16,14 +16,17 @@ Purpose
     * NET=rap : +/- 1.0 hour
 
 * geographically filtered
+
     * environmental variable "**LALO=0*" is used to turn off the filter
 
 * Duplicate checked
 
-* QC: SDM purge (or keep) flags, reject list flags.
+* QC: SDM purge (or keep) flags, reject list flags
+
     * /nwprod/dcom/us007003/sdmedit can be used to filtered out specific reports
 
-* /nwprod/com/NET/prod/RUN.yyyymmdd/MODEL.tcycz.TYPE.tmMM.bufr_d, where:
+* The product is /nwprod/com/NET/prod/RUN.yyyymmdd/MODEL.tcycz.TYPE.tmMM.bufr_d, where:
+
     * **NET(RUN/MODEL)** is either: cdas(cdas/cdas), cfs(cdas/cdas1),dump(dump/dump), gfs(gdas/gdas1), gfs(gfs/gfs), nam(nam/nam), nam(ndas/ndas), rap(rap/rap), rap(rap_p/rap_p), rtma(rtma/rtma)
     * **cyc** is cycle (hourly for NET=dump, rap, rtma; 00, 06, 12, 18 all others)
     * **MM** is 00 for all types except RUN/MODEL=ndas/ndas where it can be 12, 09, 06 or 03
