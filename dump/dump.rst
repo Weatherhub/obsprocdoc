@@ -12,6 +12,7 @@ Purpose
 * Generated from “tanks” at each network data cutoff time
 
 * Time-windowed
+
     * NET=rap : +/- 1.0 hour
 
 * geographically filtered
