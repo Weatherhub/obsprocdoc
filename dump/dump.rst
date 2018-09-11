@@ -15,7 +15,7 @@ Purpose
 
     * NET=rap : +/- 1.0 hour
 
-* geographically filtered
+* Geographically filtered
 
     * environmental variable "**LALO=0*" is used to turn off the filter
 
@@ -34,6 +34,6 @@ Purpose
 
 
 
-How to run
-==========
+Dump Procedure
+==============
 
