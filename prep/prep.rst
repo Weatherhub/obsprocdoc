@@ -20,6 +20,7 @@ Purpose
     * Each message type has its own BUFR structure as defined in the PrepBUFR mnemonic table
 
 * In: /nwprod/com/NET/prod/RUN.yyyymmdd/MODEL.tcycz.prepbufr.tmMM, where:
+
     * **NET(RUN/MODEL)** is either: nam(nam/nam), nam(ndas/ndas), rap(rap/rap), rap(rap_p/rap_p), rtma(rtma/rtma)
     * **cyc** is cycle (hourly for NET=rap, rtma; 00, 06, 12, 18 all others)
     * **MM** is 00 for all types except RUN/MODEL=ndas/ndas where it can be 12, 09, 06 or 03
