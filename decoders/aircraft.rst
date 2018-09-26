@@ -238,7 +238,7 @@ Transfer bufr data to BUFR Tanks
         * Only observations with date/time between **Run Time** - 10 days and **Run Time** + 12 hours are kept.
     * for retrospective run, set **SCREEN=OFF**
     * /nwprod/dcom/us007003/yyyymmdd/bmmm/xxsss (where mmm is WMO BUFR message type and xxx is local BUFR message subtype)
-    * 002.001 (in dump group mnemonic adpupa): Fixed radiosonde land reports
+    * 004.003 (in dump group mnemonic aircft): AMDAR format aircraft data from ASDAR/ACARS reporting systems
     * BUFR format
     * Arranged by UTC day and continuously grow throughout the day, if you run decoders many time, the content of the file will grow
     * No QC (other than rudimentary checks inside decoders)
