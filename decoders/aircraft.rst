@@ -35,7 +35,8 @@ The Aircraft data is organized as MICAPS files every 12 hours ::
 Data format
 ===========
 
-MICAPS format data is looks like::
+MICAPS format data is looks like
+::
 
 diamond  31  AMDAR���� 
 	23323
