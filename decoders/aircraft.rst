@@ -7,7 +7,7 @@ Aircraft
 Directory structure
 ===================
 
-The radiosonde data is organized as XML files every 12 hours ::
+The Aircraft data is organized as MICAPS files every 12 hours ::
 
     >  tree -L 1 UPAR_CHN_MUL_FTM
     UPAR_CHN_MUL_FTM
@@ -35,198 +35,129 @@ The radiosonde data is organized as XML files every 12 hours ::
 Data format
 ===========
 
-XML format data is looks like::
+MICAPS format data is looks like::
 
-    <R Station_Name="林芝" Country="中国" Province="西藏自治区" City="林芝市" Cnty="巴宜区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="56312" Station_Id_d="56312" Lat="29.65" Lon="94.3667" Alti="2991.8" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="15" Second="0" Sensor_type="3" RSON_Type="31" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="131072" Time_Dev_WQ="999998" Lat_Dev="999998" Lon_Dev="999998" PRS_HWC="707" GPH="999999" Heigh_Alti="999998" TEM="20.4" DPT="11.4" DTD="9" WIN_D="45" WIN_S="1" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="林芝" Country="中国" Province="西藏自治区" City="林芝市" Cnty="巴宜区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="56312" Station_Id_d="56312" Lat="29.65" Lon="94.3667" Alti="2991.8" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="15" Second="0" Sensor_type="3" RSON_Type="31" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="65536" Time_Dev_WQ="938" Lat_Dev="0" Lon_Dev="0" PRS_HWC="700" GPH="3082" Heigh_Alti="999998" TEM="19.8" DPT="8.8" DTD="11" WIN_D="40" WIN_S="2" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="林芝" Country="中国" Province="西藏自治区" City="林芝市" Cnty="巴宜区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="56312" Station_Id_d="56312" Lat="29.65" Lon="94.3667" Alti="2991.8" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="15" Second="0" Sensor_type="3" RSON_Type="31" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="65536" Time_Dev_WQ="1399" Lat_Dev="0.011" Lon_Dev="-0.007" PRS_HWC="500" GPH="5880" Heigh_Alti="999998" TEM="-0.3" DPT="-2.2" DTD="1.9" WIN_D="200" WIN_S="3" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="林芝" Country="中国" Province="西藏自治区" City="林芝市" Cnty="巴宜区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="56312" Station_Id_d="56312" Lat="29.65" Lon="94.3667" Alti="2991.8" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="15" Second="0" Sensor_type="3" RSON_Type="31" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="65536" Time_Dev_WQ="1681" Lat_Dev="0.011" Lon_Dev="0" PRS_HWC="400" GPH="7640" Heigh_Alti="999998" TEM="-9.7" DPT="-12.8" DTD="3.1" WIN_D="220" WIN_S="2" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="林芝" Country="中国" Province="西藏自治区" City="林芝市" Cnty="巴宜区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="56312" Station_Id_d="56312" Lat="29.65" Lon="94.3667" Alti="2991.8" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="15" Second="0" Sensor_type="3" RSON_Type="31" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="65536" Time_Dev_WQ="2045" Lat_Dev="0.014" Lon_Dev="-0.006" PRS_HWC="300" GPH="9820" Heigh_Alti="999998" TEM="-22.3" DPT="-39.3" DTD="17" WIN_D="80" WIN_S="4" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="林芝" Country="中国" Province="西藏自治区" City="林芝市" Cnty="巴宜区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="56312" Station_Id_d="56312" Lat="29.65" Lon="94.3667" Alti="2991.8" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="15" Second="0" Sensor_type="3" RSON_Type="31" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="65536" Time_Dev_WQ="2258" Lat_Dev="0.015" Lon_Dev="-0.016" PRS_HWC="250" GPH="11130" Heigh_Alti="999998" TEM="-33.5" DPT="-48.5" DTD="15" WIN_D="85" WIN_S="7" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="林芝" Country="中国" Province="西藏自治区" City="林芝市" Cnty="巴宜区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="56312" Station_Id_d="56312" Lat="29.65" Lon="94.3667" Alti="2991.8" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="15" Second="0" Sensor_type="3" RSON_Type="31" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="65536" Time_Dev_WQ="2495" Lat_Dev="0.003" Lon_Dev="-0.037" PRS_HWC="200" GPH="12650" Heigh_Alti="999998" TEM="-45.3" DPT="-58.3" DTD="13" WIN_D="55" WIN_S="13" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="林芝" Country="中国" Province="西藏自治区" City="林芝市" Cnty="巴宜区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="56312" Station_Id_d="56312" Lat="29.65" Lon="94.3667" Alti="2991.8" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="15" Second="0" Sensor_type="3" RSON_Type="31" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="65536" Time_Dev_WQ="2770" Lat_Dev="-0.012" Lon_Dev="-0.071" PRS_HWC="150" GPH="14500" Heigh_Alti="999998" TEM="-62.1" DPT="999999" DTD="999999" WIN_D="75" WIN_S="12" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="林芝" Country="中国" Province="西藏自治区" City="林芝市" Cnty="巴宜区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="56312" Station_Id_d="56312" Lat="29.65" Lon="94.3667" Alti="2991.8" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="15" Second="0" Sensor_type="3" RSON_Type="31" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="65536" Time_Dev_WQ="3117" Lat_Dev="-0.015" Lon_Dev="-0.12" PRS_HWC="100" GPH="16900" Heigh_Alti="999998" TEM="-78.7" DPT="999999" DTD="999999" WIN_D="85" WIN_S="14" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达日" Country="中国" Province="青海省" City="果洛藏族自治州" Cnty="达日县" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="56046" Station_Id_d="56046" Lat="33.7667" Lon="99.65" Alti="3968" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="999998" RSON_Type="32" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="131072" Time_Dev_WQ="999998" Lat_Dev="999998" Lon_Dev="999998" PRS_HWC="631" GPH="999999" Heigh_Alti="999998" TEM="10.2" DPT="8.8" DTD="1.4" WIN_D="0" WIN_S="0" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达日" Country="中国" Province="青海省" City="果洛藏族自治州" Cnty="达日县" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="56046" Station_Id_d="56046" Lat="33.7667" Lon="99.65" Alti="3968" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="999998" RSON_Type="32" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="65536" Time_Dev_WQ="1290" Lat_Dev="-0.001" Lon_Dev="-0.007" PRS_HWC="500" GPH="5870" Heigh_Alti="999998" TEM="0.2" DPT="-1" DTD="1.2" WIN_D="160" WIN_S="2" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达日" Country="中国" Province="青海省" City="果洛藏族自治州" Cnty="达日县" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="56046" Station_Id_d="56046" Lat="33.7667" Lon="99.65" Alti="3968" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="999998" RSON_Type="32" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="65536" Time_Dev_WQ="1589" Lat_Dev="0.002" Lon_Dev="-0.005" PRS_HWC="400" GPH="7630" Heigh_Alti="999998" TEM="-9.3" DPT="-10.6" DTD="1.3" WIN_D="255" WIN_S="3" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达日" Country="中国" Province="青海省" City="果洛藏族自治州" Cnty="达日县" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="56046" Station_Id_d="56046" Lat="33.7667" Lon="99.65" Alti="3968" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="999998" RSON_Type="32" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="65536" Time_Dev_WQ="1943" Lat_Dev="0.003" Lon_Dev="0.013" PRS_HWC="300" GPH="9800" Heigh_Alti="999998" TEM="-22.9" DPT="-26.6" DTD="3.7" WIN_D="290" WIN_S="8" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达日" Country="中国" Province="青海省" City="果洛藏族自治州" Cnty="达日县" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="56046" Station_Id_d="56046" Lat="33.7667" Lon="99.65" Alti="3968" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="999998" RSON_Type="32" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="65536" Time_Dev_WQ="2143" Lat_Dev="-0.004" Lon_Dev="0.026" PRS_HWC="250" GPH="11110" Heigh_Alti="999998" TEM="-32.3" DPT="-37.3" DTD="5" WIN_D="310" WIN_S="7" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达日" Country="中国" Province="青海省" City="果洛藏族自治州" Cnty="达日县" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="56046" Station_Id_d="56046" Lat="33.7667" Lon="99.65" Alti="3968" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="999998" RSON_Type="32" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="65536" Time_Dev_WQ="2371" Lat_Dev="-0.008" Lon_Dev="0.034" PRS_HWC="200" GPH="12640" Heigh_Alti="999998" TEM="-45.7" DPT="-55.7" DTD="10" WIN_D="295" WIN_S="4" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达日" Country="中国" Province="青海省" City="果洛藏族自治州" Cnty="达日县" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="56046" Station_Id_d="56046" Lat="33.7667" Lon="99.65" Alti="3968" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="999998" RSON_Type="32" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="65536" Time_Dev_WQ="2653" Lat_Dev="-0.014" Lon_Dev="0.048" PRS_HWC="150" GPH="14490" Heigh_Alti="999998" TEM="-62.3" DPT="999999" DTD="999999" WIN_D="305" WIN_S="6" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达日" Country="中国" Province="青海省" City="果洛藏族自治州" Cnty="达日县" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="56046" Station_Id_d="56046" Lat="33.7667" Lon="99.65" Alti="3968" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="999998" RSON_Type="32" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TA" EVSS="65536" Time_Dev_WQ="2957" Lat_Dev="-0.02" Lon_Dev="0.068" PRS_HWC="100" GPH="16880" Heigh_Alti="999998" TEM="-80.1" DPT="999999" DTD="999999" WIN_D="265" WIN_S="4" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="PB" EVSS="2048" Time_Dev_WQ="1085" Lat_Dev="0.003" Lon_Dev="-0.007" PRS_HWC="999998" GPH="999998" Heigh_Alti="1000" TEM="999998" DPT="999998" DTD="999998" WIN_D="115" WIN_S="6" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="PB" EVSS="2048" Time_Dev_WQ="1265" Lat_Dev="0.004" Lon_Dev="-0.014" PRS_HWC="999998" GPH="999998" Heigh_Alti="2000" TEM="999998" DPT="999998" DTD="999998" WIN_D="75" WIN_S="3" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="PB" EVSS="2048" Time_Dev_WQ="1631" Lat_Dev="0.004" Lon_Dev="-0.025" PRS_HWC="999998" GPH="999998" Heigh_Alti="4000" TEM="999998" DPT="999998" DTD="999998" WIN_D="95" WIN_S="1" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="PB" EVSS="2048" Time_Dev_WQ="2021" Lat_Dev="0.009" Lon_Dev="-0.029" PRS_HWC="999998" GPH="999998" Heigh_Alti="6000" TEM="999998" DPT="999998" DTD="999998" WIN_D="5" WIN_S="2" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="PB" EVSS="2048" Time_Dev_WQ="2387" Lat_Dev="0.016" Lon_Dev="-0.029" PRS_HWC="999998" GPH="999998" Heigh_Alti="8000" TEM="999998" DPT="999998" DTD="999998" WIN_D="130" WIN_S="6" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="PB" EVSS="2048" Time_Dev_WQ="2758" Lat_Dev="0.009" Lon_Dev="-0.04" PRS_HWC="999998" GPH="999998" Heigh_Alti="10000" TEM="999998" DPT="999998" DTD="999998" WIN_D="15" WIN_S="5" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="8192" Time_Dev_WQ="999998" Lat_Dev="999998" Lon_Dev="999998" PRS_HWC="962" GPH="999999" Heigh_Alti="999998" TEM="35.2" DPT="20.2" DTD="15" WIN_D="999999" WIN_S="999999" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="8192" Time_Dev_WQ="1319" Lat_Dev="0.003" Lon_Dev="-0.016" PRS_HWC="767" GPH="999999" Heigh_Alti="999998" TEM="16.6" DPT="14.6" DTD="2" WIN_D="999999" WIN_S="999999" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="8192" Time_Dev_WQ="1415" Lat_Dev="0.004" Lon_Dev="-0.019" PRS_HWC="724" GPH="999999" Heigh_Alti="999998" TEM="15.6" DPT="9.6" DTD="6" WIN_D="999999" WIN_S="999999" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="8192" Time_Dev_WQ="1619" Lat_Dev="0.004" Lon_Dev="-0.025" PRS_HWC="632" GPH="999999" Heigh_Alti="999998" TEM="7.6" DPT="5.6" DTD="2" WIN_D="999999" WIN_S="999999" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="8192" Time_Dev_WQ="1919" Lat_Dev="0.009" Lon_Dev="-0.027" PRS_HWC="524" GPH="999999" Heigh_Alti="999998" TEM="1.6" DPT="-5.4" DTD="7" WIN_D="999999" WIN_S="999999" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="8192" Time_Dev_WQ="2003" Lat_Dev="0.009" Lon_Dev="-0.029" PRS_HWC="497" GPH="999999" Heigh_Alti="999998" TEM="0.8" DPT="-15.2" DTD="16" WIN_D="999999" WIN_S="999999" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="8192" Time_Dev_WQ="2213" Lat_Dev="0.01" Lon_Dev="-0.027" PRS_HWC="428" GPH="999999" Heigh_Alti="999998" TEM="-6.7" DPT="-21.7" DTD="15" WIN_D="999999" WIN_S="999999" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="8192" Time_Dev_WQ="2315" Lat_Dev="0.013" Lon_Dev="-0.027" PRS_HWC="402" GPH="999999" Heigh_Alti="999998" TEM="-8.3" DPT="-48.3" DTD="40" WIN_D="999999" WIN_S="999999" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="8192" Time_Dev_WQ="2489" Lat_Dev="0.017" Lon_Dev="-0.035" PRS_HWC="355" GPH="999999" Heigh_Alti="999998" TEM="-15.9" DPT="-33.9" DTD="18" WIN_D="999999" WIN_S="999999" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="8192" Time_Dev_WQ="2663" Lat_Dev="0.014" Lon_Dev="-0.039" PRS_HWC="312" GPH="999999" Heigh_Alti="999998" TEM="-22.5" DPT="-58.5" DTD="36" WIN_D="999999" WIN_S="999999" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="8192" Time_Dev_WQ="3209" Lat_Dev="-0.026" Lon_Dev="-0.075" PRS_HWC="207" GPH="999999" Heigh_Alti="999998" TEM="-44.7" DPT="-74.7" DTD="30" WIN_D="999999" WIN_S="999999" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="8192" Time_Dev_WQ="3683" Lat_Dev="-0.105" Lon_Dev="-0.136" PRS_HWC="137" GPH="999999" Heigh_Alti="999998" TEM="-64.7" DPT="999999" DTD="999999" WIN_D="999999" WIN_S="999999" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="999998" Lat_Dev="999998" Lon_Dev="999998" PRS_HWC="962" GPH="999999" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="135" WIN_S="3" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="1295" Lat_Dev="0.003" Lon_Dev="-0.015" PRS_HWC="781" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="75" WIN_S="3" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="1355" Lat_Dev="0.003" Lon_Dev="-0.017" PRS_HWC="751" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="100" WIN_S="3" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="1535" Lat_Dev="0.004" Lon_Dev="-0.024" PRS_HWC="669" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="85" WIN_S="3" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="1595" Lat_Dev="0.004" Lon_Dev="-0.025" PRS_HWC="643" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="135" WIN_S="1" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="1655" Lat_Dev="0.004" Lon_Dev="-0.025" PRS_HWC="619" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="70" WIN_S="1" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="1715" Lat_Dev="0.005" Lon_Dev="-0.026" PRS_HWC="595" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="165" WIN_S="3" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="1775" Lat_Dev="0.007" Lon_Dev="-0.026" PRS_HWC="573" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="180" WIN_S="4" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="1835" Lat_Dev="0.008" Lon_Dev="-0.027" PRS_HWC="552" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="140" WIN_S="2" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="1895" Lat_Dev="0.009" Lon_Dev="-0.027" PRS_HWC="532" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="140" WIN_S="2" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="1955" Lat_Dev="0.01" Lon_Dev="-0.028" PRS_HWC="513" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="100" WIN_S="2" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="2015" Lat_Dev="0.009" Lon_Dev="-0.029" PRS_HWC="493" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="5" WIN_S="2" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="2075" Lat_Dev="0.009" Lon_Dev="-0.029" PRS_HWC="473" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="5" WIN_S="1" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="2135" Lat_Dev="0.009" Lon_Dev="-0.028" PRS_HWC="452" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="240" WIN_S="2" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="2225" Lat_Dev="0.01" Lon_Dev="-0.027" PRS_HWC="425" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="190" WIN_S="3" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="2285" Lat_Dev="0.012" Lon_Dev="-0.027" PRS_HWC="410" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="180" WIN_S="4" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="2405" Lat_Dev="0.017" Lon_Dev="-0.03" PRS_HWC="377" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="120" WIN_S="6" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="2525" Lat_Dev="0.017" Lon_Dev="-0.036" PRS_HWC="345" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="75" WIN_S="4" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="2585" Lat_Dev="0.017" Lon_Dev="-0.038" PRS_HWC="330" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="40" WIN_S="3" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="2645" Lat_Dev="0.014" Lon_Dev="-0.039" PRS_HWC="316" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="10" WIN_S="5" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="3065" Lat_Dev="-0.01" Lon_Dev="-0.056" PRS_HWC="233" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="45" WIN_S="16" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-    <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="3545" Lat_Dev="-0.08" Lon_Dev="-0.116" PRS_HWC="156" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="35" WIN_S="23" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
-
-.. note::
-
-    The above sample include Mandatory levels reports and Significant levels reports, CIMISS uses *EVSS* to identify the type.
-
-    * EVSS="131072" : Surface level
-    * EVSS="65536"  : Mandatory levels
-    * EVSS="2048"   : Significant levels wind
-    * EVSS="8192"   : Significant levels temperature
+diamond  31  AMDAR���� 
+	23323
+ C_CCCC		C_LY		C_LM		C_LD		C_LH		C01006		V04001		V04002		V04003		V_OHM		V05001		V06001		V08004		V02061		V07002		V12001		V11001		V11002		V11041		V11031		F07002		F12001		F11001		F11002		F11041		F11031		
+ RKSL				2018				9				12				2				HL8236				2018				9				12				0200				33.445				126.36				0			0			740				20				179				1				9999			9999			0			0			0			0			0			0			
+ RKSL				2018				9				12				2				HL8236				2018				9				12				0201				33.4666				126.405				0			0			475				21.5				104				9.8				9999			9999			0			0			0			0			0			0			
+ RKSL				2018				9				12				2				HL8236				2018				9				12				0202				33.485				126.445				0			0			255				19.5				90				10.3				9999			9999			0			0			0			0			0			0			
+ RKSL				2018				9				12				2				HL8236				2018				9				12				0203				33.505				126.4816				0			0			45				21.5				82				7.2				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0028				2018				9				12				0200				25.2116				55.7				0			0			2588				18.5				358				6.2				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0009				2018				9				12				0202				22.2883				115.44				0			0			6294				-6.7				94				13.9				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0028				2018				9				12				0200				25.2166				55.675				0			0			2557				18.5				348				6.2				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0028				2018				9				12				0200				25.2183				55.6466				0			0			2527				18.5				346				6.7				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0028				2018				9				12				0201				25.225				55.6216				0			0			2496				19				347				7.2				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0028				2018				9				12				0201				25.2316				55.595				0			0			2487				19				345				6.7				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0029				2018				9				12				0200				21.5016				113.7266				0			0			5060				-1.2				56				11.3				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0028				2018				9				12				0201				25.2333				55.57				0			0			2487				19				345				6.7				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0029				2018				9				12				0200				21.525				113.7366				0			0			4877				-0.2				53				10.8				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0028				2018				9				12				0202				25.235				55.5416				0			0			2478				19				345				6.7				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0029				2018				9				12				0200				21.55				113.7466				0			0			4706				0.7				57				10.8				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0028				2018				9				12				0202				25.235				55.515				0			0			2365				19.7				352				7.7				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0029				2018				9				12				0201				21.575				113.7566				0			0			4535				2				55				10.3				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0028				2018				9				12				0202				25.235				55.4883				0			0			2274				20.7				353				7.7				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0029				2018				9				12				0201				21.6				113.7666				0			0			4386				3.2				40				10.3				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0029				2018				9				12				0201				21.6216				113.7766				0			0			4249				4.2				40				10.3				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0029				2018				9				12				0202				21.645				113.7866				0			0			4100				5.5				47				10.3				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0029				2018				9				12				0202				21.6683				113.7966				0			0			3959				6.7				50				9.8				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0029				2018				9				12				0202				21.6916				113.8066				0			0			3862				7.2				53				11.3				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0029				2018				9				12				0203				21.715				113.8166				0			0			3749				8.2				56				11.3				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0039				2018				9				12				0201				22.125				119.335				0			0			4868				0				133				8.2				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0039				2018				9				12				0201				22.1216				119.3716				0			0			4691				1.2				127				8.7				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0039				2018				9				12				0201				22.1166				119.4066				0			0			4499				1.7				136				10.3				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0039				2018				9				12				0202				22.115				119.445				0			0			4304				2.7				143				10.3				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0039				2018				9				12				0202				22.1083				119.48				0			0			4124				4.2				146				10.3				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0039				2018				9				12				0202				22.1016				119.515				0			0			3926				6				141				10.8				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0039				2018				9				12				0203				22.1				119.55				0			0			3749				7				138				10.3				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0039				2018				9				12				0203				22.095				119.585				0			0			3606				8				145				9.8				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0039				2018				9				12				0203				22.0916				119.62				0			0			3441				8.5				153				10.3				9999			9999			0			0			0			0			0			0			
+ VHHH				2018				9				12				2				HK0039				2018				9				12				0204				22.085				119.6516				0			0			3185				10				160				10.8				9999			9999			0			0			0			0			0			0			
+ EGRR				2018				9				12				2				EU8135				2018				9				12				0206				24.4011				-55.8833				0			0			11278				-50				339				8.8				9999			9999			0			0			0			0			0			0			
+ EGRR				2018				9				12				2				EU8110				2018				9				12				0206				19.8502				6.7				0			0			11857				-52.2				57				14.4				9999			9999			0			0			0			0			0			0			
+ CWAO				2018				9				12				2								2018				9				12				0200				45.3083				-75.6333				0			0			9999			17.05				290				2.6				9999			9999			0			0			0			0			0			0			
+ CWAO				2018				9				12				2								2018				9				12				0200				45.6516				-73.4516				0			0			9999			11.55				274				3.1				9999			9999			0			0			0			0			0			0			
+ CWAO				2018				9				12				2								2018				9				12				0201				45.6316				-73.5366				0			0			9999			13.55				314				3.1				9999			9999			0			0			0			0			0			0			
+ CWAO				2018				9				12				2								2018				9				12				0202				45.5916				-73.5933				0			0			9999			13.35				317				3.6				9999			9999			0			0			0			0			0			0			
 
 .. warning::
 
-    The order of each entry in XML file has to be sorted from surface to top (See *PRS_HWC* in the XML file)
+    The *CWAO* data may miss the flight ID
 
-XML extractor
-=============
+MICAPS extractor
+================
 
-A python code is used to extract the desired information from this XML file::
+A python code is used to extract the desired information from this MICAPS file::
 
-    > python read_cimiss_upr.py > upr_data
+    > python read_micaps_amdar.py > micaps_amdar_data
 
-The information we want to extract from XML is.
+The information we want to extract from MICAPS is.
 ::
 
-    for item in doc['DS']['R']:
-        print item['@Station_Id_d'], item['@EVSS'], item['@Lat'], item['@Lon'], item['@Alti'], \
-        item['@Year'], item['@Mon'], item['@Day'], item['@Hour'], item['@Min'], item['@Second'], \
-        item['@PRS_HWC'], item['@GPH'], item['@TEM'], item['@DPT'], item['@WIN_D'], item['@WIN_S']
+    print '{:>8}'.format(flightID), year, month, day, hour, minute, lat, lon, height, temperature, wdir, wspd, vv, turb
 
-the content of **upr_data** is::
+the content of **micaps_amdar_data** is::
 
-    > less upr_data
-    56046 131072 33.7667 99.65 3968 2018 9 1 11 16 0 631 999999 10.2 8.8 0 0
-    56046 65536 33.7667 99.65 3968 2018 9 1 11 16 0 500 5870 0.2 -1 160 2
-    56046 65536 33.7667 99.65 3968 2018 9 1 11 16 0 400 7630 -9.3 -10.6 255 3
-    56046 65536 33.7667 99.65 3968 2018 9 1 11 16 0 300 9800 -22.9 -26.6 290 8
-    56046 65536 33.7667 99.65 3968 2018 9 1 11 16 0 250 11110 -32.3 -37.3 310 7
-    56046 65536 33.7667 99.65 3968 2018 9 1 11 16 0 200 12640 -45.7 -55.7 295 4
-    56046 65536 33.7667 99.65 3968 2018 9 1 11 16 0 150 14490 -62.3 999999 305 6
-    56046 65536 33.7667 99.65 3968 2018 9 1 11 16 0 100 16880 -80.1 999999 265 4
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 999998 999998 999998 999998 115 6
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 999998 999998 999998 999998 75 3
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 999998 999998 999998 999998 95 1
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 999998 999998 999998 999998 5 2
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 999998 999998 999998 999998 130 6
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 999998 999998 999998 999998 15 5
-    57328 8192 31.2 107.5 344.9 2018 9 1 11 16 0 962 999999 35.2 20.2 999999 999999
-    57328 8192 31.2 107.5 344.9 2018 9 1 11 16 0 767 999999 16.6 14.6 999999 999999
-    57328 8192 31.2 107.5 344.9 2018 9 1 11 16 0 724 999999 15.6 9.6 999999 999999
-    57328 8192 31.2 107.5 344.9 2018 9 1 11 16 0 632 999999 7.6 5.6 999999 999999
-    57328 8192 31.2 107.5 344.9 2018 9 1 11 16 0 524 999999 1.6 -5.4 999999 999999
-    57328 8192 31.2 107.5 344.9 2018 9 1 11 16 0 497 999999 0.8 -15.2 999999 999999
-    57328 8192 31.2 107.5 344.9 2018 9 1 11 16 0 428 999999 -6.7 -21.7 999999 999999
-    57328 8192 31.2 107.5 344.9 2018 9 1 11 16 0 402 999999 -8.3 -48.3 999999 999999
-    57328 8192 31.2 107.5 344.9 2018 9 1 11 16 0 355 999999 -15.9 -33.9 999999 999999
-    57328 8192 31.2 107.5 344.9 2018 9 1 11 16 0 312 999999 -22.5 -58.5 999999 999999
-    57328 8192 31.2 107.5 344.9 2018 9 1 11 16 0 207 999999 -44.7 -74.7 999999 999999
-    57328 8192 31.2 107.5 344.9 2018 9 1 11 16 0 137 999999 -64.7 999999 999999 999999
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 962 999999 999999 999999 135 3
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 781 999998 999999 999999 75 3
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 751 999998 999999 999999 100 3
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 669 999998 999999 999999 85 3
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 643 999998 999999 999999 135 1
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 619 999998 999999 999999 70 1
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 595 999998 999999 999999 165 3
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 573 999998 999999 999999 180 4
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 552 999998 999999 999999 140 2
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 532 999998 999999 999999 140 2
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 513 999998 999999 999999 100 2
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 493 999998 999999 999999 5 2
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 473 999998 999999 999999 5 1
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 452 999998 999999 999999 240 2
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 425 999998 999999 999999 190 3
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 410 999998 999999 999999 180 4
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 377 999998 999999 999999 120 6
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 345 999998 999999 999999 75 4
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 330 999998 999999 999999 40 3
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 316 999998 999999 999999 10 5
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 233 999998 999999 999999 45 16
-    57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 156 999998 999999 999999 35 23
+    > less micaps_amdar_data
+      HL8236 2018 9 12 2 0 33.445 126.36 740.0 20.0 179.0 1.0 9999.0 9999.0
+      HL8236 2018 9 12 2 1 33.4666 126.405 475.0 21.5 104.0 9.8 9999.0 9999.0
+      HL8236 2018 9 12 2 2 33.485 126.445 255.0 19.5 90.0 10.3 9999.0 9999.0
+      HL8236 2018 9 12 2 3 33.505 126.4816 45.0 21.5 82.0 7.2 9999.0 9999.0
+      HK0028 2018 9 12 2 0 25.2116 55.7 2588.0 18.5 358.0 6.2 9999.0 9999.0
+      HK0009 2018 9 12 2 2 22.2883 115.44 6294.0 -6.7 94.0 13.9 9999.0 9999.0
+      HK0028 2018 9 12 2 0 25.2166 55.675 2557.0 18.5 348.0 6.2 9999.0 9999.0
+      HK0028 2018 9 12 2 0 25.2183 55.6466 2527.0 18.5 346.0 6.7 9999.0 9999.0
+      HK0028 2018 9 12 2 1 25.225 55.6216 2496.0 19.0 347.0 7.2 9999.0 9999.0
+      HK0028 2018 9 12 2 1 25.2316 55.595 2487.0 19.0 345.0 6.7 9999.0 9999.0
+      HK0029 2018 9 12 2 0 21.5016 113.7266 5060.0 -1.2 56.0 11.3 9999.0 9999.0
+      HK0028 2018 9 12 2 1 25.2333 55.57 2487.0 19.0 345.0 6.7 9999.0 9999.0
+      HK0029 2018 9 12 2 0 21.525 113.7366 4877.0 -0.2 53.0 10.8 9999.0 9999.0
+      HK0028 2018 9 12 2 2 25.235 55.5416 2478.0 19.0 345.0 6.7 9999.0 9999.0
+      HK0029 2018 9 12 2 0 21.55 113.7466 4706.0 0.7 57.0 10.8 9999.0 9999.0
+      HK0028 2018 9 12 2 2 25.235 55.515 2365.0 19.7 352.0 7.7 9999.0 9999.0
+      HK0029 2018 9 12 2 1 21.575 113.7566 4535.0 2.0 55.0 10.3 9999.0 9999.0
+      HK0028 2018 9 12 2 2 25.235 55.4883 2274.0 20.7 353.0 7.7 9999.0 9999.0
+      HK0029 2018 9 12 2 1 21.6 113.7666 4386.0 3.2 40.0 10.3 9999.0 9999.0
+      HK0029 2018 9 12 2 1 21.6216 113.7766 4249.0 4.2 40.0 10.3 9999.0 9999.0
+      HK0029 2018 9 12 2 2 21.645 113.7866 4100.0 5.5 47.0 10.3 9999.0 9999.0
+      HK0029 2018 9 12 2 2 21.6683 113.7966 3959.0 6.7 50.0 9.8 9999.0 9999.0
+      HK0029 2018 9 12 2 2 21.6916 113.8066 3862.0 7.2 53.0 11.3 9999.0 9999.0
+      HK0029 2018 9 12 2 3 21.715 113.8166 3749.0 8.2 56.0 11.3 9999.0 9999.0
+      HK0039 2018 9 12 2 1 22.125 119.335 4868.0 0.0 133.0 8.2 9999.0 9999.0
+      HK0039 2018 9 12 2 1 22.1216 119.3716 4691.0 1.2 127.0 8.7 9999.0 9999.0
+      HK0039 2018 9 12 2 1 22.1166 119.4066 4499.0 1.7 136.0 10.3 9999.0 9999.0
+      HK0039 2018 9 12 2 2 22.115 119.445 4304.0 2.7 143.0 10.3 9999.0 9999.0
+      HK0039 2018 9 12 2 2 22.1083 119.48 4124.0 4.2 146.0 10.3 9999.0 9999.0
+      HK0039 2018 9 12 2 2 22.1016 119.515 3926.0 6.0 141.0 10.8 9999.0 9999.0
+      HK0039 2018 9 12 2 3 22.1 119.55 3749.0 7.0 138.0 10.3 9999.0 9999.0
+      HK0039 2018 9 12 2 3 22.095 119.585 3606.0 8.0 145.0 9.8 9999.0 9999.0
+      HK0039 2018 9 12 2 3 22.0916 119.62 3441.0 8.5 153.0 10.3 9999.0 9999.0
+      HK0039 2018 9 12 2 4 22.085 119.6516 3185.0 10.0 160.0 10.8 9999.0 9999.0
+      EU8135 2018 9 12 2 6 24.4011 -55.8833 11278.0 -50.0 339.0 8.8 9999.0 9999.0
+      EU8110 2018 9 12 2 6 19.8502 6.7 11857.0 -52.2 57.0 14.4 9999.0 9999.0
+       99999 2018 9 12 2 0 45.3083 -75.6333 9999.0 17.05 290.0 2.6 9999.0 9999.0
+       99999 2018 9 12 2 0 45.6516 -73.4516 9999.0 11.55 274.0 3.1 9999.0 9999.0
+       99999 2018 9 12 2 1 45.6316 -73.5366 9999.0 13.55 314.0 3.1 9999.0 9999.0
+       99999 2018 9 12 2 2 45.5916 -73.5933 9999.0 13.35 317.0 3.6 9999.0 9999.0
+     SQXIOYZA 2018 9 12 2 0 33.308 -111.69 2185.0 20.85 237.0 7.7 9999.0 9999.0
+
 
 Source code
 ===========
 
 1. Source code directory::
 
-    > cd /nwprod/decoders/decod_dccimissupr/sorc
+    > cd /nwprod/decoders/decod_dcmicapsamdar_v3.0.0/sorc
 
-2. Subroutines to decode Radiosonde data
+2. Subroutines to decode Aircraft data
 
-    * uadcod_mandatory.f
-    * uadcod_significant_temp.f
-    * uadcod_significant_wind.f
-
-3. The top control is in **dccimissupr.c**, the code snippet is.
-::
-
-    /*
-    ** Call the decoding routine.
-    **
-    ** Change this function call and define command for the
-    ** specific decoder.
-    */
-
-    #ifdef UNDERSCORE
-    #define ua_dcod_mandatory ua_dcod_mandatory_
-    #define ua_dcod_significant_wind ua_dcod_significant_wind_
-    #define ua_dcod_significant_temp ua_dcod_significant_temp_
-    #endif
-
-    	ua_dcod_mandatory ( curtim, lndtbl, shptbl, bufrtb, &nhours, &iret, 
-    		  strlen(curtim), strlen(lndtbl),
-    		  strlen(shptbl), strlen(bufrtb) );
-
-    	ua_dcod_significant_wind ( curtim, lndtbl, shptbl, bufrtb, &nhours, &iret, 
-    		  strlen(curtim), strlen(lndtbl),
-    		  strlen(shptbl), strlen(bufrtb) );
-
-    	ua_dcod_significant_temp ( curtim, lndtbl, shptbl, bufrtb, &nhours, &iret, 
-    		  strlen(curtim), strlen(lndtbl),
-    		  strlen(shptbl), strlen(bufrtb) );
-
-    /*
-    **	Send shut down message and close the log files.
-    */
-    	dc_exit ( &iret );
-
-    }
+    * afdcod.f
 
 .. note::
 
-    * The *lndtbl*, *shptbl* are not used, although they are required as arguments and read in.
-    * The path and file name of *upr_data* file are hard coded in the subroutines.
+    * The *pirep.tbl*,  *airep.tbl* are not used, although they are required as arguments and read in.
+    * The path and file name of *micaps_amdar_data* file are hard coded in the subroutines.
 
 4. Compile the code
 ::
@@ -239,7 +170,7 @@ Decode and convert to BUFR format
 1.  enter into the exec directory
 ::
 
-    > cd /nwprod/decoders/decod_dccimissupr/exec
+    > cd /nwprod/decoders/decod_dcmicapsamdar/exec
     > ls -la
     total 964
     drwxr-xr-x 1 vagrant vagrant    288 Sep 10 16:31 .
@@ -259,37 +190,45 @@ Decode and convert to BUFR format
 
     > cat run.ksh
     #!/bin/bash
-    export DBNBUFRT=120    # control the frequency to flush the bufr
+    export DBNBUFRT=120
     export TRANJB=/nwprod/ush/tranjb
-    export tank_dir=/nwprod/dcom/us007003    # used by TRANJB
-    export SCREEN="OFF"    # Turn off the time screen and keep all data, used by TRANJB 
+    export tank_dir=/nwprod/dcom/us007003
+    export SCREEN="OFF"
     export DBNROOT=`pwd`
     rm tmp/*
-    rm decod_dccimissupr.log
-    ./decod_dccmissupr -d decod_dccimissupr.log -b 240 -c 180901/1200 sonde.land.tbl sonde.ship.tbl bufrtab.002
+    rm decod_dcmicapsadmar.log
+    ./decod_dcmicapsadmar -v 4 -d decod_dcmicapsadmar.log  -b 240 -c 180912/0200 pirep.tbl airep.tbl bufrtab.004
     ls -la tmp/*
+
+    BUFR_FILES=$(echo tmp/BUFR*)
+    echo ${BUFR_FILES}
+
+    for file in ${BUFR_FILES}
+    do
+      ${TRANJB} ${tank_dir} ${file}
+    done
 
 .. note::
 
-    * -c 180901/1200 : Set the **current time** (201809011200) used to calculate the time departures of the obs. data.
+    * -c 180912/0200 : Set the **current time** (201809120200) used to calculate the time departures of the obs. data.
     * -b 240 : Number of hours to decode prior to "current" time (default)
     * The observations with date/time between **current time** - 240 hours and  **current time** + 3 are **kept**.
 
  3. The generated BUFR format file will be saved at
  ::
 
-    > ls -la tmp/BUFR.0.raob.1.12381.1536602459.61
-    -rw-rw-r-- 1 vagrant vagrant 20360 Sep 10 18:01 tmp/BUFR.0.raob.1.12381.1536602459.61
+    > ls -la tmp/BUFR.0.aircraft.1.1933.1537419287.73 
+    -rw-r--r--  1 xinzhang  staff  1806552 Sep 21 18:45 tmp/BUFR.0.aircraft.1.1933.1537419287.73
 
 
 Transfer bufr data to BUFR Tanks
 ================================
 * put data in BUFR **tanks**::
 
-    > /nwprod/ush/tranjb /nwprod/dcom/us007003 tmp/BUFR.0.raob.1.12381.1536602459.61
+    > /nwprod/ush/tranjb /nwprod/dcom/us007003 tmp/BUFR.0.aircraft.1.1933.1537419287.73
 
-    > ls -al /nwprod/dcom/us007003/20180901/b002/xx001
-    -rw-r--r-- 1 vagrant vagrant 36304 Sep 10 16:29 /nwprod/dcom/us007003/20180901/b002/xx001
+    > ls -al /nwprod/dcom/us007003/20180912/b004/xx003
+    -rw-r--r-- 1 vagrant vagrant 1828720 Sep 19 22:54 /nwprod/dcom/us007003/20180912/b004/xx003
 
 .. note::
 
@@ -305,24 +244,9 @@ Transfer bufr data to BUFR Tanks
     * No duplicate checking
     * Interested users can use utility *debufr* to check the content of the bufr file::
 
-        > /nwprod/util/execdebufr /nwprod/dcom/us007003/20180901/b002/xx001
+        > /nwprod/util/execdebufr /nwprod/dcom/us007003/20180912/b004/xx003
 
       the output is in *debufr.out*.
-
-Some decoding tips
-==================
-
-1. How to decide *VSIG*
-
-    According to the BUFR code FLAG table, the *VSIG* should be assigned an appropriate value based on the observational type::
-
-        008001 VERTICAL SOUNDING SIGNIFICANCE (7-BIT FLAG TABLE)
-        1  SURFACE                            1 0 0 0 0 0 0 = 64
-        2  STANDARD                           0 1 0 0 0 0 0 = 32
-        3  TROPOPAUSE                         0 0 1 0 0 0 0 = 16
-        4  MAX WIND                           0 0 0 1 0 0 0 = 8
-        5  SIG TEMP                           0 0 0 0 1 0 0 = 4
-        6  SIG WIND                           0 0 0 0 0 1 0 = 2
 
 
 PrepBUFR Processing
