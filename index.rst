@@ -12,6 +12,7 @@ Welcome to ObsProc's documentation!
 
    usage/installation
    usage/quickstart
+   decoders/surface
    decoders/radiosonde
    decoders/aircraft
    dump/dump
