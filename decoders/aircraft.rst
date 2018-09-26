@@ -39,10 +39,10 @@ MICAPS format data is looks like::
 
 diamond  31  AMDAR���� 
 	23323
- C_CCCC		C_LY		C_LM		C_LD		C_LH		C01006		V04001		V04002		V04003		V_OHM		V05001		V06001		V08004		V02061		V07002		V12001		V11001		V11002		V11041		V11031		F07002		F12001		F11001		F11002		F11041		F11031		
- RKSL				2018				9				12				2				HL8236				2018				9				12				0200				33.445				126.36				0			0			740				20				179				1				9999			9999			0			0			0			0			0			0			
- RKSL				2018				9				12				2				HL8236				2018				9				12				0201				33.4666				126.405				0			0			475				21.5				104				9.8				9999			9999			0			0			0			0			0			0			
- RKSL				2018				9				12				2				HL8236				2018				9				12				0202				33.485				126.445				0			0			255				19.5				90				10.3				9999			9999			0			0			0			0			0			0			
+ C_CCCC		C_LY		C_LM		C_LD		C_LH		C01006		V04001		V04002		V04003		V_OHM		V05001		V06001		V08004		V02061		V07002		V12001		V11001		V11002		V11041		V11031		F07002		F12001		F11001		F11002		F11041		F11031
+ RKSL				2018				9				12				2				HL8236				2018				9				12				0200				33.445				126.36				0			0			740				20				179				1				9999			9999			0			0			0			0			0			0
+ RKSL				2018				9				12				2				HL8236				2018				9				12				0201				33.4666				126.405				0			0			475				21.5				104				9.8				9999			9999			0			0			0			0			0			0
+ RKSL				2018				9				12				2				HL8236				2018				9				12				0202				33.485				126.445				0			0			255				19.5				90				10.3				9999			9999			0			0			0			0			0			0
  RKSL				2018				9				12				2				HL8236				2018				9				12				0203				33.505				126.4816				0			0			45				21.5				82				7.2				9999			9999			0			0			0			0			0			0			
  VHHH				2018				9				12				2				HK0028				2018				9				12				0200				25.2116				55.7				0			0			2588				18.5				358				6.2				9999			9999			0			0			0			0			0			0			
  VHHH				2018				9				12				2				HK0009				2018				9				12				0202				22.2883				115.44				0			0			6294				-6.7				94				13.9				9999			9999			0			0			0			0			0			0			
@@ -172,16 +172,17 @@ Decode and convert to BUFR format
 
     > cd /nwprod/decoders/decod_dcmicapsamdar/exec
     > ls -la
-    total 964
-    drwxr-xr-x 1 vagrant vagrant    288 Sep 10 16:31 .
-    drwxr-xr-x 1 vagrant vagrant    160 Sep  8 21:04 ..
-    lrwxr-xr-x 1 vagrant vagrant     34 Aug 30 04:15 bufrtab.002 -> ../../decod_shared/fix/bufrtab.002
-    -rw-r--r-- 1 vagrant vagrant    449 Sep 10 16:29 decod_dccimissupr.log
-    -rwxr-xr-x 1 vagrant vagrant 947632 Sep 10 16:19 decod_dccmissupr
-    -rwxr-xr-x 1 vagrant vagrant    389 Sep  9 05:40 run.ksh
-    lrwxr-xr-x 1 vagrant vagrant     30 Aug 30 04:15 sonde.land.tbl -> ../dictionaries/sonde.land.tbl
-    lrwxr-xr-x 1 vagrant vagrant     30 Aug 30 04:15 sonde.ship.tbl -> ../dictionaries/sonde.ship.tbl
-    drwxr-xr-x 1 vagrant vagrant     96 Sep 10 16:29 tmp
+    total 1944
+    drwxr-xr-x  9 xinzhang  staff     288 Sep 25 21:24 .
+    drwxr-xr-x  5 xinzhang  staff     160 Sep 21 18:45 ..
+    lrwxr-xr-x  1 xinzhang  staff      25 Sep 21 18:45 airep.tbl -> ../dictionaries/airep.tbl
+    lrwxr-xr-x  1 xinzhang  staff      34 Sep 21 18:45 bufrtab.004 -> ../../decod_shared/fix/bufrtab.004
+    -rwxr-xr-x  1 xinzhang  staff  985984 Sep 21 18:45 decod_dcmicapsadmar
+    -rw-r--r--  1 xinzhang  staff     470 Sep 21 18:45 decod_dcmicapsadmar.log
+    lrwxr-xr-x  1 xinzhang  staff      25 Sep 21 18:45 pirep.tbl -> ../dictionaries/pirep.tbl
+    -rwxr-xr-x  1 xinzhang  staff     410 Sep 21 18:45 run.ksh
+    drwxr-xr-x  3 xinzhang  staff      96 Sep 21 18:45 tmp
+
 
 2. run the decoder script
 ::
