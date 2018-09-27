@@ -68,16 +68,18 @@ xml extractor
 
 A python code is used to extract the desired information from this xml file::
 
-    > python read_micaps_amdar.py > micaps_amdar_data
+    > python read_cimiss_surface.py > cimiss_data_surface
 
-The information we want to extract from MICAPS is.
+The information we want to extract from xml is.
 ::
 
-    print '{:>8}'.format(flightID), year, month, day, hour, minute, lat, lon, height, temperature, wdir, wspd, vv, turb
+    print s.attributes['Station_Id_d'].value, s.attributes['Lat'].value, s.attributes['Lon'].value, s.attributes['Alti'].value, \
+        s.attributes['Year'].value, s.attributes['Mon'].value, s.attributes['Day'].value, s.attributes['Hour'].value, s.attributes['Min'].value, \
+        s.attributes['PRS'].value, s.attributes['TEM'].value, s.attributes['RHU'].value, s.attributes['WIN_D_Avg_1mi'].value, s.attributes['WIN_S_Avg_1mi'].value
 
-the content of **micaps_amdar_data** is::
+the content of **cimiss_data_surface** is::
 
-    > less micaps_amdar_data
+    > less cimiss_data_surface
       HL8236 2018 9 12 2 0 33.445 126.36 740.0 20.0 179.0 1.0 9999.0 9999.0
       HL8236 2018 9 12 2 1 33.4666 126.405 475.0 21.5 104.0 9.8 9999.0 9999.0
       HL8236 2018 9 12 2 2 33.485 126.445 255.0 19.5 90.0 10.3 9999.0 9999.0
