@@ -7,28 +7,28 @@ Surface
 Directory structure
 ===================
 
-The Surface data is organized as xml files every 12 hours ::
+The Surface data is organized as xml files every 15 minutes ::
 
-    >  tree -L 1 UPAR_CHN_MUL_FTM
-    UPAR_CHN_MUL_FTM
+    > tree -L 1 SURF_CHN_MAIN_MIN|more
+    SURF_CHN_MAIN_MIN
+    ├── 201807032000.xml
+    ├── 201807032015.xml
+    ├── 201807032030.xml
+    ├── 201807032045.xml
+    ├── 201807032100.xml
+    ├── 201807032115.xml
+    ├── 201807032130.xml
+    ├── 201807032145.xml
+    ├── 201807032200.xml
+    ├── 201807032215.xml
+    ├── 201807032230.xml
+    ├── 201807032245.xml
+    ├── 201807032300.xml
+    ├── 201807032315.xml
+    ├── 201807032330.xml
+    ├── 201807032345.xml
     ├── 201807040000.xml
-    ├── 201807041200.xml
-    ├── 201807050000.xml
-    ├── 201807051200.xml
-    ├── 201807060000.xml
-    ├── 201807061200.xml
-    ├── 201807070000.xml
-    ├── 201807071200.xml
-    ├── 201807080000.xml
-    ├── 201807081200.xml
-    ├── 201807090000.xml
-    ├── 201807091200.xml
-    ├── 201807100000.xml
-    ├── 201807101200.xml
-    ├── 201807110000.xml
-    ├── 201807111200.xml
-    ├── 201807120000.xml
-    ├── 201807121200.xml
+    ├── 201807040015.xml
     ......
 
 
@@ -37,53 +37,31 @@ Data format
 
 xml format data is looks like ::
 
-    diamond  31  AMDAR���� 
-    	23323
-     C_CCCC		C_LY		C_LM		C_LD		C_LH		C01006		V04001		V04002		V04003		V_OHM		V05001		V06001		V08004		V02061		V07002		V12001		V11001		V11002		V11041		V11031		F07002		F12001		F11001		F11002		F11041		F11031
-     RKSL				2018				9				12				2				HL8236				2018				9				12				0200				33.445				126.36				0			0			740				20				179				1				9999			9999			0			0			0			0			0			0
-     RKSL				2018				9				12				2				HL8236				2018				9				12				0201				33.4666				126.405				0			0			475				21.5				104				9.8				9999			9999			0			0			0			0			0			0
-     RKSL				2018				9				12				2				HL8236				2018				9				12				0202				33.485				126.445				0			0			255				19.5				90				10.3				9999			9999			0			0			0			0			0			0
-     RKSL				2018				9				12				2				HL8236				2018				9				12				0203				33.505				126.4816				0			0			45				21.5				82				7.2				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0028				2018				9				12				0200				25.2116				55.7				0			0			2588				18.5				358				6.2				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0009				2018				9				12				0202				22.2883				115.44				0			0			6294				-6.7				94				13.9				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0028				2018				9				12				0200				25.2166				55.675				0			0			2557				18.5				348				6.2				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0028				2018				9				12				0200				25.2183				55.6466				0			0			2527				18.5				346				6.7				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0028				2018				9				12				0201				25.225				55.6216				0			0			2496				19				347				7.2				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0028				2018				9				12				0201				25.2316				55.595				0			0			2487				19				345				6.7				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0029				2018				9				12				0200				21.5016				113.7266				0			0			5060				-1.2				56				11.3				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0028				2018				9				12				0201				25.2333				55.57				0			0			2487				19				345				6.7				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0029				2018				9				12				0200				21.525				113.7366				0			0			4877				-0.2				53				10.8				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0028				2018				9				12				0202				25.235				55.5416				0			0			2478				19				345				6.7				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0029				2018				9				12				0200				21.55				113.7466				0			0			4706				0.7				57				10.8				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0028				2018				9				12				0202				25.235				55.515				0			0			2365				19.7				352				7.7				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0029				2018				9				12				0201				21.575				113.7566				0			0			4535				2				55				10.3				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0028				2018				9				12				0202				25.235				55.4883				0			0			2274				20.7				353				7.7				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0029				2018				9				12				0201				21.6				113.7666				0			0			4386				3.2				40				10.3				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0029				2018				9				12				0201				21.6216				113.7766				0			0			4249				4.2				40				10.3				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0029				2018				9				12				0202				21.645				113.7866				0			0			4100				5.5				47				10.3				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0029				2018				9				12				0202				21.6683				113.7966				0			0			3959				6.7				50				9.8				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0029				2018				9				12				0202				21.6916				113.8066				0			0			3862				7.2				53				11.3				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0029				2018				9				12				0203				21.715				113.8166				0			0			3749				8.2				56				11.3				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0039				2018				9				12				0201				22.125				119.335				0			0			4868				0				133				8.2				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0039				2018				9				12				0201				22.1216				119.3716				0			0			4691				1.2				127				8.7				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0039				2018				9				12				0201				22.1166				119.4066				0			0			4499				1.7				136				10.3				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0039				2018				9				12				0202				22.115				119.445				0			0			4304				2.7				143				10.3				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0039				2018				9				12				0202				22.1083				119.48				0			0			4124				4.2				146				10.3				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0039				2018				9				12				0202				22.1016				119.515				0			0			3926				6				141				10.8				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0039				2018				9				12				0203				22.1				119.55				0			0			3749				7				138				10.3				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0039				2018				9				12				0203				22.095				119.585				0			0			3606				8				145				9.8				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0039				2018				9				12				0203				22.0916				119.62				0			0			3441				8.5				153				10.3				9999			9999			0			0			0			0			0			0			
-     VHHH				2018				9				12				2				HK0039				2018				9				12				0204				22.085				119.6516				0			0			3185				10				160				10.8				9999			9999			0			0			0			0			0			0			
-     EGRR				2018				9				12				2				EU8135				2018				9				12				0206				24.4011				-55.8833				0			0			11278				-50				339				8.8				9999			9999			0			0			0			0			0			0			
-     EGRR				2018				9				12				2				EU8110				2018				9				12				0206				19.8502				6.7				0			0			11857				-52.2				57				14.4				9999			9999			0			0			0			0			0			0			
-     CWAO				2018				9				12				2								2018				9				12				0200				45.3083				-75.6333				0			0			9999			17.05				290				2.6				9999			9999			0			0			0			0			0			0			
-     CWAO				2018				9				12				2								2018				9				12				0200				45.6516				-73.4516				0			0			9999			11.55				274				3.1				9999			9999			0			0			0			0			0			0			
-     CWAO				2018				9				12				2								2018				9				12				0201				45.6316				-73.5366				0			0			9999			13.55				314				3.1				9999			9999			0			0			0			0			0			0			
-     CWAO				2018				9				12				2								2018				9				12				0202				45.5916				-73.5933				0			0			9999			13.35				317				3.6				9999			9999			0			0			0			0			0			0			
+<?xml version="1.0" encoding="UTF-8"?>
+<DS returnCode="0" returnMessage="Query Succeed" rowCount="48599" colCount="44" requestParams="times=20180901160000&amp;datacode=SURF_CHN_MAIN_MIN&amp;elements=Station_Name,Country,Province,City,Cnty,Town,Station_Id_C,Station_Id_d,Lat,Lon,Alti,PRS_Sensor_Alti,Station_Type,Station_levl,Admin_Code_CHN,Year,Mon,Day,Hour,Min,PRS,TEM,RHU,WIN_D_Avg_1mi,WIN_S_Avg_1mi,LGST,GST,GST_5cm,GST_10cm,GST_15cm,GST_20cm,GST_40Cm,Q_PRS,Q_TEM,Q_RHU,Q_WIN_D_Avg_1mi,Q_WIN_S_Avg_1mi,Q_LGST,Q_GST,Q_GST_5cm,Q_GST_10cm,Q_GST_15cm,Q_GST_20cm,Q_GST_40Cm" requestTime="2018-09-01 16:15:32" responseTime="2018-09-01 16:15:47" takeTime="14.888" fieldNames="站名 国家 省份 地市 区县 乡镇 区站号(字符) 区站号(数字) 纬度 经度 测站高度 气压传感器海拔高度 测站类型 测站级别 行政区代码 年 月 日 时 分 气压 温度/气温 相对湿度 1分钟平均风向 1分钟平均风速 草面(雪面)温度 地面温度 5cm地温 10cm地温 15cm地温 20cm地温 40cm地温 气压质控码 温度/气温质控码 相对湿度质控码 1分钟平均风向质控码 1分钟平均风速质控码 草面(雪面)温度质控码 地面温度质控码 5cm地温质控码 10cm地温质控码 15cm地温质控码 20cm地温质控码 40cm地温质控码" fieldUnits="- - - - - - - - 度 度 米 米 - - - 年 月 日 时 分钟 百帕 摄氏度(℃) 百分率 度 米/秒 摄氏度(℃) 摄氏度(℃) 摄氏度(℃) 摄氏度(℃) 摄氏度(℃) 摄氏度(℃) 摄氏度(℃) - - - - - - - - - - - -">
+  <R Station_Name="嫩洼" Country="中国" Province="四川省" City="阿坝藏族羌族自治州" Cnty="若尔盖县" Town="" Station_Id_C="56076" Station_Id_d="56076" Lat="33.85" Lon="102.6333" Alti="3429" PRS_Sensor_Alti="3430.5" Station_Type="0" Station_levl="999999" Admin_Code_CHN="513232" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="674.7" TEM="10.8" RHU="97" WIN_D_Avg_1mi="149" WIN_S_Avg_1mi="3.4" LGST="11.2" GST="11.4" GST_5cm="12.5" GST_10cm="14.5" GST_15cm="15.9" GST_20cm="16.6" GST_40Cm="13.8" Q_PRS="0" Q_TEM="0" Q_RHU="0" Q_WIN_D_Avg_1mi="0" Q_WIN_S_Avg_1mi="0" Q_LGST="0" Q_GST="0" Q_GST_5cm="0" Q_GST_10cm="0" Q_GST_15cm="0" Q_GST_20cm="0" Q_GST_40Cm="0"/>
+  <R Station_Name="卜尔汉图镇" Country="中国" Province="内蒙古自治区" City="包头市" Cnty="" Town="" Station_Id_C="C4002" Station_Id_d="674002" Lat="40.6644" Lon="109.6661" Alti="1052" PRS_Sensor_Alti="1053" Station_Type="0" Station_levl="16" Admin_Code_CHN="150200" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="890.2" TEM="15" RHU="95" WIN_D_Avg_1mi="2" WIN_S_Avg_1mi="1.3" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="0" Q_TEM="0" Q_RHU="0" Q_WIN_D_Avg_1mi="0" Q_WIN_S_Avg_1mi="0" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="金阁" Country="中国" Province="安徽省" City="芜湖市" Cnty="南陵县" Town="" Station_Id_C="I5904" Station_Id_d="735904" Lat="31.0231" Lon="118.4314" Alti="9" PRS_Sensor_Alti="999999" Station_Type="0" Station_levl="14" Admin_Code_CHN="340223" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="999999" TEM="26.4" RHU="999999" WIN_D_Avg_1mi="158" WIN_S_Avg_1mi="1.7" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="7" Q_TEM="0" Q_RHU="7" Q_WIN_D_Avg_1mi="0" Q_WIN_S_Avg_1mi="0" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="交口" Country="中国" Province="陕西省" City="西安市" Cnty="临潼区" Town="" Station_Id_C="V8552" Station_Id_d="868552" Lat="34.55" Lon="109.2975" Alti="357" PRS_Sensor_Alti="358" Station_Type="0" Station_levl="16" Admin_Code_CHN="610115" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="965.8" TEM="24.9" RHU="74" WIN_D_Avg_1mi="356" WIN_S_Avg_1mi="0.9" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="0" Q_TEM="0" Q_RHU="0" Q_WIN_D_Avg_1mi="0" Q_WIN_S_Avg_1mi="0" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="高要区活道镇首岭村委会明村" Country="中国" Province="广东省" City="肇庆市" Cnty="" Town="" Station_Id_C="G8262" Station_Id_d="718262" Lat="22.8133" Lon="112.4264" Alti="49" PRS_Sensor_Alti="999999" Station_Type="0" Station_levl="14" Admin_Code_CHN="441200" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="999999" TEM="25.4" RHU="999999" WIN_D_Avg_1mi="225" WIN_S_Avg_1mi="0" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="7" Q_TEM="0" Q_RHU="7" Q_WIN_D_Avg_1mi="0" Q_WIN_S_Avg_1mi="0" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="高圳村" Country="中国" Province="福建省" City="三明市" Cnty="建宁县" Town="" Station_Id_C="F8128" Station_Id_d="708128" Lat="26.8458" Lon="116.7783" Alti="343" PRS_Sensor_Alti="343" Station_Type="0" Station_levl="14" Admin_Code_CHN="350430" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="970.6" TEM="22.9" RHU="96" WIN_D_Avg_1mi="176" WIN_S_Avg_1mi="1.1" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="0" Q_TEM="0" Q_RHU="0" Q_WIN_D_Avg_1mi="0" Q_WIN_S_Avg_1mi="0" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="耦山" Country="中国" Province="安徽省" City="铜陵市" Cnty="枞阳县" Town="" Station_Id_C="I7152" Station_Id_d="737152" Lat="30.7728" Lon="117.3278" Alti="28.3" PRS_Sensor_Alti="28.3" Station_Type="0" Station_levl="14" Admin_Code_CHN="340722" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="1005.9" TEM="26.3" RHU="97" WIN_D_Avg_1mi="135" WIN_S_Avg_1mi="0.6" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="0" Q_TEM="0" Q_RHU="0" Q_WIN_D_Avg_1mi="0" Q_WIN_S_Avg_1mi="0" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="澧浦" Country="中国" Province="浙江省" City="金华市" Cnty="金东区" Town="" Station_Id_C="K6060" Station_Id_d="756060" Lat="29.1036" Lon="119.8056" Alti="58" PRS_Sensor_Alti="999999" Station_Type="0" Station_levl="14" Admin_Code_CHN="330703" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="999999" TEM="26.5" RHU="999999" WIN_D_Avg_1mi="210" WIN_S_Avg_1mi="1.1" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="7" Q_TEM="0" Q_RHU="7" Q_WIN_D_Avg_1mi="0" Q_WIN_S_Avg_1mi="0" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="黄茅园站" Country="中国" Province="湖南省" City="怀化市" Cnty="溆浦县" Town="" Station_Id_C="P4130" Station_Id_d="804130" Lat="27.4056" Lon="110.4781" Alti="200" PRS_Sensor_Alti="999999" Station_Type="0" Station_levl="14" Admin_Code_CHN="431224" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="999999" TEM="23.1" RHU="999999" WIN_D_Avg_1mi="999999" WIN_S_Avg_1mi="999999" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="7" Q_TEM="0" Q_RHU="7" Q_WIN_D_Avg_1mi="7" Q_WIN_S_Avg_1mi="7" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="灰腾梁" Country="中国" Province="内蒙古自治区" City="锡林郭勒盟" Cnty="锡林浩特市" Town="" Station_Id_C="C2002" Station_Id_d="672002" Lat="43.2972" Lon="116.1158" Alti="1284" PRS_Sensor_Alti="1285" Station_Type="0" Station_levl="16" Admin_Code_CHN="152502" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="860" TEM="13.9" RHU="94" WIN_D_Avg_1mi="217" WIN_S_Avg_1mi="7.6" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="0" Q_TEM="0" Q_RHU="0" Q_WIN_D_Avg_1mi="0" Q_WIN_S_Avg_1mi="0" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="隔河头" Country="中国" Province="河北省" City="秦皇岛市" Cnty="青龙满族自治县" Town="" Station_Id_C="B3689" Station_Id_d="663689" Lat="40.2278" Lon="119.22" Alti="300" PRS_Sensor_Alti="999999" Station_Type="0" Station_levl="14" Admin_Code_CHN="130321" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="999999" TEM="19.2" RHU="999999" WIN_D_Avg_1mi="999999" WIN_S_Avg_1mi="999999" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="7" Q_TEM="0" Q_RHU="7" Q_WIN_D_Avg_1mi="7" Q_WIN_S_Avg_1mi="7" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="黄湖农场" Country="中国" Province="浙江省" City="宁波市" Cnty="余姚市" Town="" Station_Id_C="K2628" Station_Id_d="752628" Lat="30.1492" Lon="121.1961" Alti="5" PRS_Sensor_Alti="0" Station_Type="0" Station_levl="14" Admin_Code_CHN="330281" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="999999" TEM="28.1" RHU="999999" WIN_D_Avg_1mi="237" WIN_S_Avg_1mi="1.6" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="7" Q_TEM="0" Q_RHU="7" Q_WIN_D_Avg_1mi="0" Q_WIN_S_Avg_1mi="0" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="淳化卜家" Country="中国" Province="陕西省" City="咸阳市" Cnty="淳化县" Town="" Station_Id_C="V0410" Station_Id_d="860410" Lat="34.9769" Lon="108.5269" Alti="1193" PRS_Sensor_Alti="999999" Station_Type="0" Station_levl="14" Admin_Code_CHN="610430" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="999999" TEM="19.8" RHU="999999" WIN_D_Avg_1mi="999999" WIN_S_Avg_1mi="999999" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="7" Q_TEM="0" Q_RHU="7" Q_WIN_D_Avg_1mi="7" Q_WIN_S_Avg_1mi="7" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="户县原种场" Country="中国" Province="陕西省" City="西安市" Cnty="鄠邑区" Town="" Station_Id_C="V8283" Station_Id_d="868283" Lat="34.2217" Lon="108.5681" Alti="394.5" PRS_Sensor_Alti="394.5" Station_Type="0" Station_levl="14" Admin_Code_CHN="610118" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="959.8" TEM="26.9" RHU="64" WIN_D_Avg_1mi="302" WIN_S_Avg_1mi="1" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="0" Q_TEM="0" Q_RHU="0" Q_WIN_D_Avg_1mi="0" Q_WIN_S_Avg_1mi="0" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="兰亭" Country="中国" Province="浙江省" City="绍兴市" Cnty="柯桥区" Town="" Station_Id_C="K4019" Station_Id_d="754019" Lat="29.9078" Lon="120.4844" Alti="59" PRS_Sensor_Alti="999999" Station_Type="0" Station_levl="14" Admin_Code_CHN="330603" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="999999" TEM="24.6" RHU="999999" WIN_D_Avg_1mi="324" WIN_S_Avg_1mi="0" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="7" Q_TEM="0" Q_RHU="7" Q_WIN_D_Avg_1mi="0" Q_WIN_S_Avg_1mi="0" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="东关" Country="中国" Province="甘肃省" City="庆阳市" Cnty="合水县" Town="" Station_Id_C="W8120" Station_Id_d="878120" Lat="36.0133" Lon="108.1183" Alti="1129" PRS_Sensor_Alti="0" Station_Type="0" Station_levl="14" Admin_Code_CHN="621024" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="876.3" TEM="17.5" RHU="99" WIN_D_Avg_1mi="329" WIN_S_Avg_1mi="1.4" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="2" Q_TEM="0" Q_RHU="0" Q_WIN_D_Avg_1mi="0" Q_WIN_S_Avg_1mi="0" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="幸福村" Country="中国" Province="浙江省" City="杭州市" Cnty="建德市" Town="" Station_Id_C="K1675" Station_Id_d="751675" Lat="29.6344" Lon="119.5692" Alti="95" PRS_Sensor_Alti="999999" Station_Type="0" Station_levl="14" Admin_Code_CHN="330182" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="999999" TEM="24.7" RHU="999999" WIN_D_Avg_1mi="333" WIN_S_Avg_1mi="0" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="7" Q_TEM="0" Q_RHU="7" Q_WIN_D_Avg_1mi="0" Q_WIN_S_Avg_1mi="0" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="花果村" Country="中国" Province="陕西省" City="汉中市" Cnty="汉台区" Town="" Station_Id_C="V6005" Station_Id_d="866005" Lat="33.2" Lon="106.9833" Alti="818" PRS_Sensor_Alti="819" Station_Type="0" Station_levl="16" Admin_Code_CHN="610702" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="916.1" TEM="25.9" RHU="68" WIN_D_Avg_1mi="78" WIN_S_Avg_1mi="4.1" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="0" Q_TEM="0" Q_RHU="0" Q_WIN_D_Avg_1mi="0" Q_WIN_S_Avg_1mi="0" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="里仁村" Country="中国" Province="安徽省" City="安庆市" Cnty="岳西县" Town="" Station_Id_C="I6672" Station_Id_d="736672" Lat="30.7747" Lon="116.1697" Alti="526.4" PRS_Sensor_Alti="999999" Station_Type="0" Station_levl="14" Admin_Code_CHN="340828" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="999999" TEM="22.8" RHU="999999" WIN_D_Avg_1mi="141" WIN_S_Avg_1mi="1.6" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="7" Q_TEM="0" Q_RHU="7" Q_WIN_D_Avg_1mi="0" Q_WIN_S_Avg_1mi="0" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="牛扎坪" Country="中国" Province="湖北省" City="宜昌市" Cnty="" Town="" Station_Id_C="Q4008" Station_Id_d="814008" Lat="30.7667" Lon="111.25" Alti="212" PRS_Sensor_Alti="999999" Station_Type="0" Station_levl="14" Admin_Code_CHN="420500" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="999999" TEM="25.4" RHU="999999" WIN_D_Avg_1mi="320" WIN_S_Avg_1mi="1" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="7" Q_TEM="0" Q_RHU="7" Q_WIN_D_Avg_1mi="0" Q_WIN_S_Avg_1mi="0" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="坪中" Country="中国" Province="重庆市" City="市辖区" Cnty="璧山区" Town="" Station_Id_C="A8290" Station_Id_d="658290" Lat="29.3111" Lon="106.0942" Alti="404" PRS_Sensor_Alti="999999" Station_Type="0" Station_levl="14" Admin_Code_CHN="500120" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="999999" TEM="30.6" RHU="999999" WIN_D_Avg_1mi="999999" WIN_S_Avg_1mi="999999" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="7" Q_TEM="0" Q_RHU="7" Q_WIN_D_Avg_1mi="7" Q_WIN_S_Avg_1mi="7" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
+  <R Station_Name="麻雀岩水库" Country="中国" Province="重庆市" City="市辖区" Cnty="荣昌区" Town="" Station_Id_C="A8279" Station_Id_d="658279" Lat="29.4319" Lon="105.4728" Alti="369" PRS_Sensor_Alti="999999" Station_Type="0" Station_levl="14" Admin_Code_CHN="500153" Year="2018" Mon="9" Day="1" Hour="16" Min="0" PRS="999999" TEM="26.6" RHU="999999" WIN_D_Avg_1mi="999999" WIN_S_Avg_1mi="999999" LGST="999999" GST="999999" GST_5cm="999999" GST_10cm="999999" GST_15cm="999999" GST_20cm="999999" GST_40Cm="999999" Q_PRS="7" Q_TEM="0" Q_RHU="7" Q_WIN_D_Avg_1mi="7" Q_WIN_S_Avg_1mi="7" Q_LGST="7" Q_GST="7" Q_GST_5cm="7" Q_GST_10cm="7" Q_GST_15cm="7" Q_GST_20cm="7" Q_GST_40Cm="7"/>
 
-.. warning::
-
-    The *CWAO* data may miss the flight ID
 
 xml extractor
 ================
