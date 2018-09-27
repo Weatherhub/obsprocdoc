@@ -7,29 +7,32 @@ Aircraft
 Directory structure
 ===================
 
-The Aircraft data is organized as MICAPS files every 12 hours ::
+The Aircraft data is organized as MICAPS files every hour ::
 
-    >  tree -L 1 UPAR_CHN_MUL_FTM
-    UPAR_CHN_MUL_FTM
-    ├── 201807040000.xml
-    ├── 201807041200.xml
-    ├── 201807050000.xml
-    ├── 201807051200.xml
-    ├── 201807060000.xml
-    ├── 201807061200.xml
-    ├── 201807070000.xml
-    ├── 201807071200.xml
-    ├── 201807080000.xml
-    ├── 201807081200.xml
-    ├── 201807090000.xml
-    ├── 201807091200.xml
-    ├── 201807100000.xml
-    ├── 201807101200.xml
-    ├── 201807110000.xml
-    ├── 201807111200.xml
-    ├── 201807120000.xml
-    ├── 201807121200.xml
-    ......
+    > ls -la ./20180829:
+    total 54300
+    drwxrwxr-x  2 zwtd zwtd    4096 8月  30 07:08 .
+    drwxrwxr-x 55 zwtd zwtd    4096 9月  12 10:43 ..
+    -rw-rw-r--  1 zwtd zwtd 1094800 8月  29 08:39 18082823.000
+    -rw-rw-r--  1 zwtd zwtd 3695492 8月  29 08:59 18082900.000
+    -rw-rw-r--  1 zwtd zwtd 3267992 8月  29 11:59 18082901.000
+    -rw-rw-r--  1 zwtd zwtd 3673593 8月  29 10:59 18082902.000
+    -rw-rw-r--  1 zwtd zwtd 2594303 8月  29 12:59 18082904.000
+    -rw-rw-r--  1 zwtd zwtd 1036466 8月  29 14:59 18082905.000
+    -rw-rw-r--  1 zwtd zwtd  986009 8月  29 15:59 18082907.000
+    -rw-rw-r--  1 zwtd zwtd 1328987 8月  29 16:59 18082908.000
+    -rw-rw-r--  1 zwtd zwtd 1621409 8月  29 17:59 18082909.000
+    -rw-rw-r--  1 zwtd zwtd  289590 8月  29 18:59 18082910.000
+    -rw-rw-r--  1 zwtd zwtd 2583587 8月  29 19:59 18082911.000
+    -rw-rw-r--  1 zwtd zwtd 2997458 8月  29 20:59 18082912.000
+    -rw-rw-r--  1 zwtd zwtd 4000539 8月  29 23:59 18082913.000
+    -rw-rw-r--  1 zwtd zwtd 4175368 8月  29 22:59 18082914.000
+    -rw-rw-r--  1 zwtd zwtd 3668416 8月  30 00:59 18082916.000
+    -rw-rw-r--  1 zwtd zwtd 3555013 8月  30 02:59 18082917.000
+    -rw-rw-r--  1 zwtd zwtd 3840992 8月  30 05:59 18082919.000
+    -rw-rw-r--  1 zwtd zwtd 3678748 8月  30 04:59 18082920.000
+    -rw-rw-r--  1 zwtd zwtd 3846887 8月  30 06:59 18082922.000
+    -rw-rw-r--  1 zwtd zwtd 3623384 8月  30 07:59 18082923.000
 
 
 Data format
