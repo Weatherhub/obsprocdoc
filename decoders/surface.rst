@@ -104,16 +104,16 @@ Source code
 
 1. Source code directory::
 
-    > cd /nwprod/decoders/decod_dcmicapsamdar_v3.0.0/sorc
+    > cd /nwprod/decoders/decod_dccimisssurf_v3.0.0/sorc
 
-2. Subroutines to decode Aircraft data
+2. Subroutines to decode surface data
 
-    * afdcod.f
+    * lsdcod.f
 
 .. note::
 
-    * The *pirep.tbl*,  *airep.tbl* are not used, although they are required as arguments and read in.
-    * The path and file name of *micaps_amdar_data* file are hard coded in the subroutines.
+    * The *cimiss.tbl* and *decod_WMO.Res40.headers* are not used, although they are required as arguments and read in.
+    * The path and file name of *cimiss_data_surface* file are hard coded in the subroutines.
 
 4. Compile the code
 ::
@@ -126,18 +126,18 @@ Decode and convert to BUFR format
 1.  enter into the exec directory
 ::
 
-    > cd /nwprod/decoders/decod_dcmicapsamdar/exec
+    > cd /nwprod/decoders/decod_dccimisssurf_v3/exec
     > ls -la
-    total 1944
-    drwxr-xr-x  9 xinzhang  staff     288 Sep 25 21:24 .
-    drwxr-xr-x  5 xinzhang  staff     160 Sep 21 18:45 ..
-    lrwxr-xr-x  1 xinzhang  staff      25 Sep 21 18:45 airep.tbl -> ../dictionaries/airep.tbl
-    lrwxr-xr-x  1 xinzhang  staff      34 Sep 21 18:45 bufrtab.004 -> ../../decod_shared/fix/bufrtab.004
-    -rwxr-xr-x  1 xinzhang  staff  985984 Sep 21 18:45 decod_dcmicapsadmar
-    -rw-r--r--  1 xinzhang  staff     470 Sep 21 18:45 decod_dcmicapsadmar.log
-    lrwxr-xr-x  1 xinzhang  staff      25 Sep 21 18:45 pirep.tbl -> ../dictionaries/pirep.tbl
-    -rwxr-xr-x  1 xinzhang  staff     410 Sep 21 18:45 run.ksh
-    drwxr-xr-x  3 xinzhang  staff      96 Sep 21 18:45 tmp
+    total 4048
+    drwxr-xr-x  9 xinzhang  staff      288 Sep 21 18:46 .
+    drwxr-xr-x  6 xinzhang  staff      192 Sep 21 18:46 ..
+    lrwxr-xr-x  1 xinzhang  staff       34 Sep 21 18:46 bufrtab.000 -> ../../decod_shared/fix/bufrtab.000
+    -rw-r--r--  1 xinzhang  staff  1121683 Sep 21 18:46 cimiss.tbl
+    lrwxr-xr-x  1 xinzhang  staff       31 Sep 21 18:46 decod_WMO.Res40.headers -> ../parm/decod_WMO.Res40.headers
+    -rwxr-xr-x  1 xinzhang  staff   940680 Sep 21 18:46 decod_dccimisssurf
+    -rw-r--r--  1 xinzhang  staff      446 Sep 21 18:46 decod_dccimisssurf.log
+    -rwxr-xr-x  1 xinzhang  staff      386 Sep 21 18:46 run.ksh
+    drwxr-xr-x  3 xinzhang  staff       96 Sep 21 18:46 tmp
 
 
 2. run the decoder script
@@ -146,20 +146,19 @@ Decode and convert to BUFR format
     > run.ksh
 
     > cat run.ksh
-    #!/bin/bash
+    !/bin/bash
     export DBNBUFRT=120
     export TRANJB=/nwprod/ush/tranjb
     export tank_dir=/nwprod/dcom/us007003
-    export SCREEN="OFF"
     export DBNROOT=`pwd`
     rm tmp/*
-    rm decod_dcmicapsadmar.log
-    ./decod_dcmicapsadmar -v 4 -d decod_dcmicapsadmar.log  -b 240 -c 180912/0200 pirep.tbl airep.tbl bufrtab.004
+    rm decod_dccimiss.log
+    ./decod_dccimiss -d decod_dccimiss.log -b 240 -c 180901/1600 bufrtab.000 cimiss.tbl decod_WMO.Res40.headers
     ls -la tmp/*
-
+    
     BUFR_FILES=$(echo tmp/BUFR*)
     echo ${BUFR_FILES}
-
+    
     for file in ${BUFR_FILES}
     do
       ${TRANJB} ${tank_dir} ${file}
@@ -167,7 +166,7 @@ Decode and convert to BUFR format
 
 .. note::
 
-    * -c 180912/0200 : Set the **current time** (201809120200) used to calculate the time departures of the obs. data.
+    * -c 180901/1600 : Set the **current time** (201809011600) used to calculate the time departures of the obs. data.
     * -b 240 : Number of hours to decode prior to "current" time (default)
     * The observations with date/time between **current time** - 240 hours and  **current time** + 3 are **kept**.
 
@@ -175,17 +174,17 @@ Decode and convert to BUFR format
  ::
 
     > ls -la tmp/BUFR.0.aircraft.1.1933.1537419287.73 
-    -rw-r--r--  1 xinzhang  staff  1806552 Sep 21 18:45 tmp/BUFR.0.aircraft.1.1933.1537419287.73
+    -rw-r--r--  1 xinzhang  staff  4199744 Sep 21 18:45 tmp/BUFR.0.cimiss.1.6436.1536097072.8
 
 
 Transfer bufr data to BUFR Tanks
 ================================
 * put data in BUFR **tanks**::
 
-    > /nwprod/ush/tranjb /nwprod/dcom/us007003 tmp/BUFR.0.aircraft.1.1933.1537419287.73
+    > /nwprod/ush/tranjb /nwprod/dcom/us007003 tmp/BUFR.0.cimiss.1.6436.1536097072.8
 
-    > ls -al /nwprod/dcom/us007003/20180912/b004/xx003
-    -rw-r--r-- 1 vagrant vagrant 1828720 Sep 19 22:54 /nwprod/dcom/us007003/20180912/b004/xx003
+    > ls -al /nwprod/dcom/us007003/20180901/b000/xx01 
+    -rw-r--r-- 1 vagrant vagrant 4235328 Sep 27 04:42 /nwprod/dcom/us007003/20180901/b000/xx001 
 
 .. note::
 
@@ -194,13 +193,13 @@ Transfer bufr data to BUFR Tanks
         * Only observations with date/time between **Run Time** - 10 days and **Run Time** + 12 hours are kept.
     * for retrospective run, set **SCREEN=OFF**
     * /nwprod/dcom/us007003/yyyymmdd/bmmm/xxsss (where mmm is WMO BUFR message type and xxx is local BUFR message subtype)
-    * 004.003 (in dump group mnemonic aircft): AMDAR format aircraft data from ASDAR/ACARS reporting systems
+    * 000.001 (in dump group mnemonic adpsfc): Surface synoptic fixed land reports
     * BUFR format
     * Arranged by UTC day and continuously grow throughout the day, if you run decoders many time, the content of the file will grow
     * No QC (other than rudimentary checks inside decoders)
     * No duplicate checking
     * Interested users can use utility *debufr* to check the content of the bufr file::
 
-        > /nwprod/util/execdebufr /nwprod/dcom/us007003/20180912/b004/xx003
+        > /nwprod/util/execdebufr /nwprod/dcom/us007003/20180901/b000/xx001
 
       the output is in *debufr.out*.
