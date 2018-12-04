@@ -10,6 +10,8 @@ Welcome to ObsProc's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   background/requirements
+   design/design
    usage/installation
    usage/quickstart
    decoders/surface
