@@ -11,7 +11,6 @@ Welcome to ObsProc's documentation!
    :caption: Contents:
 
    background/requirements
-   design/design
    usage/installation
    usage/quickstart
    decoders/surface
