@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to ObsProc's documentation!
-===================================
+观测资料的质量控制和格式转换!
+========================
 
 .. toctree::
    :maxdepth: 2
