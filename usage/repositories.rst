@@ -33,6 +33,10 @@
 
     > git clone https://github.com/LongRunWeather/NCEP-Decoders.git decoders
 
+* 下载最新版本的_`gempak <https://www.unidata.ucar.edu/downloads/gempak/index.jsp/>`_::
+
+    > wget https://www.unidata.ucar.edu/downloads/gempak/latest/gempak-7.4.3.tar.gz
+
 * 目录结构应该是::
 
     > cpaessxinzhang-mpro:LR-App-Store xinzhang$ tree -L 1 nwprod
