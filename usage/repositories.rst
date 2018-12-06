@@ -9,9 +9,13 @@
 
 使用git版本管理系统，获取源代码
 
-* 在 :code:`$HOME` 目录下建立 :code:`nwprod` 目录::
+* 在 :code:`$HOME` 目录下建立克隆obsproc::
     
-    > cd $HOME; mkdir -p nwprod; cd nwprod
+    > git clone https://weatherhub@github.com/LongRunWeather/NCEP-obsproc.git nwprod
+
+*  进入 :code:`nwprod` 目录：：
+
+    > cd nwprod
 
 * 克隆lib::
 
@@ -24,6 +28,10 @@
 * 克隆rap::
 
     > git clone https://github.com/LongRunWeather/NCEP-rap.git rap.v4.0.2
+
+* 克隆decoders::
+
+    > git clone https://github.com/LongRunWeather/NCEP-Decoders.git decoders
 
 * 目录结构应该是::
 
