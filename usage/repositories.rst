@@ -9,7 +9,7 @@
 
 使用git版本管理系统，获取源代码
 
-* 在:code:`$HOME`目录下建立:code:`nwprod`目录::
+* 在 :code:`$HOME` 目录下建立 :code:`nwprod` 目录::
     
     > cd $HOME; mkdir -p nwprod; cd nwprod
 
