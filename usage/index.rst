@@ -7,5 +7,6 @@
 
    repositories.rst
    installation.rst
-   quickstart.rst
    ../decoders/index.rst
+   ../dump/dump.rst
+   ../prep/prep.rst
