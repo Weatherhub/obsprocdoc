@@ -33,7 +33,7 @@
 
     > git clone https://github.com/LongRunWeather/NCEP-Decoders.git decoders
 
-* 下载最新版本的 _`gempak <https://www.unidata.ucar.edu/downloads/gempak/index.jsp/>`_::
+* 下载最新版本的 `gempak <https://www.unidata.ucar.edu/downloads/gempak/index.jsp/>`_ ::
 
     > wget https://www.unidata.ucar.edu/downloads/gempak/latest/gempak-7.4.3.tar.gz
 
