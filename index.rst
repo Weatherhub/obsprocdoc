@@ -12,7 +12,6 @@
 
    background/requirements
    usage/index.rst
-   decoders/index.rst
    dump/dump
    prep/prep
    reference/reference

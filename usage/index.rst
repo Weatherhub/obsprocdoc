@@ -8,3 +8,4 @@
    repositories.rst
    installation.rst
    quickstart.rst
+   ../decoders/index.rst
