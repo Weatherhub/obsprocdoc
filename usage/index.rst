@@ -5,5 +5,6 @@
 .. toctree::
    :maxdepth: 2
 
+   repositories.rst
    installation.rst
    quickstart.rst
