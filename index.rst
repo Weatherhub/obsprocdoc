@@ -11,8 +11,7 @@
    :caption: Contents:
 
    background/requirements
-   usage/installation
-   usage/quickstart
+   usage/index.rst
    decoders/surface
    decoders/radiosonde
    decoders/aircraft
