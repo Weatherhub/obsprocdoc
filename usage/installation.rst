@@ -13,7 +13,7 @@ The whole system requires to be run with *Singularity*. To install Singualrity:
 
 * shell into intel.simg::
 
-    > singularity shell -B /Users/xinzhang/work/LR-App-Store/nwprod:/nwprod -e intel/intel.simg
+    > singularity shell -e -B $HOME/nwprod:/nwprod nwprod/intel.simg
 
 .. note::
     make sure your local nwprod directory is mounted as /nwprod in Singualrity container.

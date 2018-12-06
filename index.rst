@@ -11,6 +11,7 @@
    :caption: Contents:
 
    background/requirements
+   design/design.rst
    usage/index.rst
    reference/reference
 
