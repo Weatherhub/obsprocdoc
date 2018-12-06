@@ -12,8 +12,6 @@
 
    background/requirements
    usage/index.rst
-   dump/dump
-   prep/prep
    reference/reference
 
 Indices and tables
