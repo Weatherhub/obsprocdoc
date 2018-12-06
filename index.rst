@@ -12,9 +12,7 @@
 
    background/requirements
    usage/index.rst
-   decoders/surface
-   decoders/radiosonde
-   decoders/aircraft
+   decoders/index.rst
    dump/dump
    prep/prep
    reference/reference
