@@ -4,9 +4,9 @@
 
 .. contents ::
 
-Installing Singularity
+系统流程图
 ==========================
 
 .. image:: images/obsproc.png
-    :height: 600px
+    :height: 400px
     :align: center
