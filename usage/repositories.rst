@@ -13,7 +13,7 @@
     
     > git clone https://weatherhub@github.com/LongRunWeather/NCEP-obsproc.git nwprod
 
-*  进入 :code:`nwprod` 目录：：
+*  进入 :code:`nwprod` 目录::
 
     > cd nwprod
 
