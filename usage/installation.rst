@@ -113,16 +113,31 @@ Building NCEP libraries
 Building `gempak <https://www.unidata.ucar.edu/software/gempak/>`_
 ==================================================================
 
-* enter into gempak directory::
+* Enter into gempak directory::
 
-    > cd /nwprod/gempak/NAWIPS
+    > cd /nwprod/gempak
+    > ln -s GEMPAK7/ NAWIPS
 
-* setup the necessary environment variables::
+* Edit :code:`GEMPAK7/Gemenviron.profile` to set :code:`$NAWIPS` to the new :code:`GEMPAK7` directory::
 
-    > . ./Gemenviron.profile
+    # Please configure the following definitions to reflect your system:
+    #
+    # Top level directory:
+        setenv NAWIPS /nwprod/gempak/GEMPAK7
+    #
 
-* compile::
+* Edit :code:`GEMPAK7/config/Makeinc.common` to add :code:`hdf5` to :code:`$NETCDF`::
 
+    NETCDF            = $(OS_LIB)/libnetcdf.a $(OS_LIB)/libhdf5_hl.a $(OS_LIB)/libhdf5.a -ldl -m -z
+
+* Assume we are usinf gfortran in Linux, edit :code:`GEMPAK7/config/Makeinc.linux_gfortran` to add :code:`-I$(OS_INC)` to :code:`$NCOPT`::
+
+    NCOPT = "CPPFLAGS=-DNDEBUG -Df2cFortran -I$(OS_INC)" "FFLAGS=-O -Wno-globals" "CFLAGS=-O $(NCII)" "CXX= "
+
+* cd to :code:`GEMPAK7`, source :code:`Gemenviron.profile`, and build::
+
+    > cd GEMPAK7
+    > . Gemenviron.profile
     > make everything
 
 * it makes lots of libs which will be used by decoders::
