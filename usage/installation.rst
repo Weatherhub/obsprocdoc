@@ -130,7 +130,7 @@ Building `gempak <https://www.unidata.ucar.edu/software/gempak/>`_
 
     NETCDF            = $(OS_LIB)/libnetcdf.a $(OS_LIB)/libhdf5_hl.a $(OS_LIB)/libhdf5.a -ldl -lm -lz
 
-* Assume we are using gfortran in Linux, edit :code:`GEMPAK7/config/Makeinc.linux_gfortran` to add :code:`-I$(OS_INC)` to :code:`$NCOPT`::
+* Assume we are using gfortran in Linux, edit :code:`GEMPAK7/config/Makeinc.linux64_gfortran` to add :code:`-I$(OS_INC)` to :code:`$NCOPT`::
 
     NCOPT = "CPPFLAGS=-DNDEBUG -Df2cFortran -I$(OS_INC)" "FFLAGS=-O -Wno-globals" "CFLAGS=-O $(NCII)" "CXX= "
 
