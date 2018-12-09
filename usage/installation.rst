@@ -128,7 +128,7 @@ Building `gempak <https://www.unidata.ucar.edu/software/gempak/>`_
 
 * Edit :code:`GEMPAK7/config/Makeinc.common` to add :code:`hdf5` libraries to :code:`$NETCDF`::
 
-    NETCDF            = $(OS_LIB)/libnetcdf.a $(OS_LIB)/libhdf5_hl.a $(OS_LIB)/libhdf5.a -ldl -m -z
+    NETCDF            = $(OS_LIB)/libnetcdf.a $(OS_LIB)/libhdf5_hl.a $(OS_LIB)/libhdf5.a -ldl -lm -lz
 
 * Assume we are using gfortran in Linux, edit :code:`GEMPAK7/config/Makeinc.linux_gfortran` to add :code:`-I$(OS_INC)` to :code:`$NCOPT`::
 
