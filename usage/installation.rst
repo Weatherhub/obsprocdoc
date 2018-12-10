@@ -238,6 +238,16 @@ Building obsproc
 Building decoders
 =================
 
+* enter into gempak directory::
+
+    > cd /nwprod/gempak
+    > ln -fs GEMPAK7/Gemenviron.profile .gempak
+
+* edit :code:`.gempak`, add following lines::
+
+   GEMINC=$GEMPAK/include
+   export GEMINC
+
 * enter into directory::
 
     > cd /nwprod/decoders/decod_shared
