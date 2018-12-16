@@ -111,9 +111,14 @@ XML format data is looks like::
 XML extractor
 =============
 
-A python code is used to extract the desired information from this XML file::
+A python code is used to extract the desired information from this XML files::
 
-    > python read_cimiss_upr.py > upr_data
+.. note::
+
+    The python :code:`xmltodict` is required.
+
+    > # This command will find all :code:`*.xml` files and prcessing the file one by one
+    > find /cimiss/UPAR_CHN_MUL_FTM -name "*.xml" -exec python read_cimiss_upr.py -f {} \; > upr_data
 
 The information we want to extract from XML is.
 ::
@@ -305,7 +310,7 @@ Transfer bufr data to BUFR Tanks
     * No duplicate checking
     * Interested users can use utility *debufr* to check the content of the bufr file::
 
-        > /nwprod/util/execdebufr /nwprod/dcom/us007003/20180901/b002/xx001
+        > /nwprod/util/exec/debufr /nwprod/dcom/us007003/20180901/b002/xx001
 
       the output is in *debufr.out*.
 
