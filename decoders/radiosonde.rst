@@ -111,11 +111,11 @@ XML format data is looks like::
 XML extractor
 =============
 
-A python code is used to extract the desired information from this XML files::
-
 .. note::
 
     The python :code:`xmltodict` is required.
+
+A python code is used to extract the desired information from this XML files::
 
     > # This command will find all :code:`*.xml` files and prcessing the file one by one
     > find /cimiss/UPAR_CHN_MUL_FTM -name "*.xml" -exec python read_cimiss_upr.py -f {} \; > upr_data
@@ -302,17 +302,17 @@ Transfer bufr data to BUFR Tanks
         * Define **Run Time** is the system time when the tranjb is running.
         * Only observations with date/time between **Run Time** - 10 days and **Run Time** + 12 hours are kept.
     * for retrospective run, set **SCREEN=OFF**
-    * /nwprod/dcom/us007003/yyyymmdd/bmmm/xxsss (where mmm is WMO BUFR message type and xxx is local BUFR message subtype)
+    * :code:`/nwprod/dcom/us007003/yyyymmdd/bmmm/xxsss` (where mmm is WMO BUFR message type and xxx is local BUFR message subtype)
     * 002.001 (in dump group mnemonic adpupa): Fixed radiosonde land reports
     * BUFR format
     * Arranged by UTC day and continuously grow throughout the day, if you run decoders many time, the content of the file will grow
     * No QC (other than rudimentary checks inside decoders)
     * No duplicate checking
-    * Interested users can use utility *debufr* to check the content of the bufr file::
+    * Interested users can use utility :code:`debufr` to check the content of the bufr file::
 
         > /nwprod/util/exec/debufr /nwprod/dcom/us007003/20180901/b002/xx001
 
-      the output is in *debufr.out*.
+      the output is in :code:`debufr.out`.
 
 Some decoding tips
 ==================
