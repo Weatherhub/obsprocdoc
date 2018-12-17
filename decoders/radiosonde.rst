@@ -118,7 +118,9 @@ XML extractor
 A python code is used to extract the desired information from this XML files::
 
     > # This command will find all xml files and prcessing the file one by one
-    > find /home/data/raw/cimiss/UPAR_CHN_MUL_FTM -name "*.xml" -size +0 -exec python read_cimiss_upr.py -f {} \; >> upr_data
+    > # This command should be ran outside of Singularity container
+    > rm upr_data
+    > find /home/data/raw/cimiss/UPAR_CHN_MUL_FTM -name "*.xml" -size +0 -exec python read_cimiss_upr.py -f {} \;
 
 The information we want to extract from XML is.
 ::
