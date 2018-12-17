@@ -78,7 +78,7 @@ The information we want to extract from xml is.
         s.attributes['Year'].value, s.attributes['Mon'].value, s.attributes['Day'].value, s.attributes['Hour'].value, s.attributes['Min'].value, \
         s.attributes['PRS'].value, s.attributes['TEM'].value, s.attributes['RHU'].value, s.attributes['WIN_D_Avg_1mi'].value, s.attributes['WIN_S_Avg_1mi'].value
 
-the content of **cimiss_data_surface** is::
+the content of :code:`cimiss_data_surface` is::
 
     > less cimiss_data_surface
       56076 33.85 102.6333 3429 2018 9 1 16 0 674.7 10.8 97 149 3.4
@@ -112,8 +112,8 @@ Source code
 
 .. note::
 
-    * The *cimiss.tbl* and *decod_WMO.Res40.headers* are not used, although they are required as arguments and read in.
-    * The path and file name of *cimiss_data_surface* file are hard coded in the subroutines.
+    * The *cimiss.tbl* and :code:`decod_WMO.Res40.headers` are not used, although they are required as arguments and read in.
+    * The path and file name of :code:`cimiss_data_surface` file are hard coded in the subroutines.
 
 4. Compile the code
 ::
@@ -192,14 +192,14 @@ Transfer bufr data to BUFR Tanks
         * Define **Run Time** is the system time when the tranjb is running.
         * Only observations with date/time between **Run Time** - 10 days and **Run Time** + 12 hours are kept.
     * for retrospective run, set **SCREEN=OFF**
-    * /nwprod/dcom/us007003/yyyymmdd/bmmm/xxsss (where mmm is WMO BUFR message type and xxx is local BUFR message subtype)
+    * :code:`/nwprod/dcom/us007003/yyyymmdd/bmmm/xxsss` (where mmm is WMO BUFR message type and xxx is local BUFR message subtype)
     * 000.001 (in dump group mnemonic adpsfc): Surface synoptic fixed land reports
     * BUFR format
     * Arranged by UTC day and continuously grow throughout the day, if you run decoders many time, the content of the file will grow
     * No QC (other than rudimentary checks inside decoders)
     * No duplicate checking
-    * Interested users can use utility *debufr* to check the content of the bufr file::
+    * Interested users can use utility :code:`debufr` to check the content of the bufr file::
 
-        > /nwprod/util/execdebufr /nwprod/dcom/us007003/20180901/b000/xx001
+        > /nwprod/util/exec/debufr /nwprod/dcom/us007003/20180901/b000/xx001
 
-      the output is in *debufr.out*.
+      the output is in :code:`debufr.out`.
