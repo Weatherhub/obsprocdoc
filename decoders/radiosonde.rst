@@ -113,12 +113,12 @@ XML extractor
 
 .. note::
 
-    The python :code:`xmltodict` is required.
+    The python module :code:`xmltodict` is required.
 
 A python code is used to extract the desired information from this XML files::
 
     > # This command will find all :code:`*.xml` files and prcessing the file one by one
-    > find /cimiss/UPAR_CHN_MUL_FTM -name "*.xml" -exec python read_cimiss_upr.py -f {} \; > upr_data
+    > find /home/data/raw/cimiss/UPAR_CHN_MUL_FTM -name "*.xml" -exec python read_cimiss_upr.py -f {} \; > upr_data
 
 The information we want to extract from XML is.
 ::
@@ -128,7 +128,7 @@ The information we want to extract from XML is.
         item['@Year'], item['@Mon'], item['@Day'], item['@Hour'], item['@Min'], item['@Second'], \
         item['@PRS_HWC'], item['@GPH'], item['@TEM'], item['@DPT'], item['@WIN_D'], item['@WIN_S']
 
-the content of **upr_data** is::
+the content of :code:`upr_data` is::
 
     > less upr_data
     56046 131072 33.7667 99.65 3968 2018 9 1 11 16 0 631 999999 10.2 8.8 0 0
@@ -193,7 +193,7 @@ Source code
     * uadcod_significant_temp.f
     * uadcod_significant_wind.f
 
-3. The top control is in **dccimissupr.c**, the code snippet is.
+3. The top control is in :code:`dccimissupr.c`, the code snippet is.
 ::
 
     /*
@@ -230,8 +230,8 @@ Source code
 
 .. note::
 
-    * The *lndtbl*, *shptbl* are not used, although they are required as arguments and read in.
-    * The path and file name of *upr_data* file are hard coded in the subroutines.
+    * The :code:`lndtbl`, :code:`shptbl` are not used, although they are required as arguments and read in.
+    * The path and file name of :code:`upr_data` file are hard-wired in the subroutines.
 
 4. Compile the code
 ::
