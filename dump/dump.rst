@@ -1,6 +1,6 @@
-====
+=====
 Dump
-====
+=====
 
 .. contents ::
 
@@ -25,7 +25,7 @@ Purpose
 
     * /nwprod/dcom/us007003/sdmedit can be used to filtered out specific reports
 
-* The product is /nwprod/com/NET/prod/RUN.yyyymmdd/MODEL.tcycz.TYPE.tmMM.bufr_d, where:
+* The product is :code:`/nwprod/com/NET/prod/RUN.yyyymmdd/MODEL.tcycz.TYPE.tmMM.bufr_d`, where:
 
     * **NET(RUN/MODEL)** is either: cdas(cdas/cdas), cfs(cdas/cdas1),dump(dump/dump), gfs(gdas/gdas1), gfs(gfs/gfs), nam(nam/nam), nam(ndas/ndas), rap(rap/rap), rap(rap_p/rap_p), rtma(rtma/rtma)
     * **cyc** is cycle (hourly for NET=dump, rap, rtma; 00, 06, 12, 18 all others)
@@ -35,7 +35,7 @@ Purpose
 
 
 Dump Procedure
-==============
+===============
 
 For each type of observation, the following steps are followed:
 
