@@ -208,7 +208,7 @@ Decoders Source code
 
 3. The top control program is :code:`dccimissupr.c`, the code snippet is
 
-..code-block:: fortran
+..code-block::
 
     /*
     ** Call the decoding routine.
