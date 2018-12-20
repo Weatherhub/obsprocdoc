@@ -32,12 +32,3 @@ Purpose
     * **MM** is 00 for all types except RUN/MODEL=ndas/ndas where it can be 12, 09, 06 or 03
     * **TYPE** is either: 1bamua, 1bamub, 1bhrs3, 1bhrs4, 1bmhs, adpsfc, adpupa, aircar, aircft, airsev, ascatt, ascatw, atms, atovs, avcsam, avcspm, bathy, cris, esamua, esamub, eshrs3, esmhs, geoimr, goesfv, goesnd, gome, gpsipw, gpsro, lghtng, lgycld, mls, msonet, mtiasi, nexrad, omi, osbuv8, proflr, radwnd, rassda, satwnd, sevcsr, sfcshp, sptrmm, ssmisu, tesac, trkob, trmm, vadwnd, wdsatr, wndsat (types actually dumped depend upon the network)
 
-
-
-Dump Procedure
-===============
-
-For each type of observation, the following steps are followed:
-
-1. 
-
