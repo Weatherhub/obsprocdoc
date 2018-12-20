@@ -200,7 +200,7 @@ Decoders Source code
 
     > cd /nwprod/decoders/decod_dccimissupr/sorc
 
-2. Ket subroutines to decode Radiosonde data
+2. Key subroutines to decode Radiosonde data
 
     * :code:`uadcod_mandatory.f`
     * :code:`uadcod_significant_temp.f`
@@ -307,8 +307,9 @@ Decode and convert to BUFR format
     * The observations with date/time between **current time** - 240 hours and  **current time** + 3 are **kept**.
 
 
- 3. The generated BUFR format file will be saved at
- ::
+3. The generated BUFR format file will be saved at
+
+.. code_block bash::
 
     > ls -la tmp/BUFR.0.raob.1.12381.1536602459.61
     -rw-rw-r-- 1 vagrant vagrant 20360 Sep 10 18:01 tmp/BUFR.0.raob.1.12381.1536602459.61
