@@ -5,7 +5,11 @@
 .. contents ::
 
 1. 信息的提取
+    
+    请参考 :doc:
 
 2. 解码
+    
+    请参考
 
-3，运行 **dump** 和 **obsproc**
+3. 运行 **dump** 和 **obsproc**
