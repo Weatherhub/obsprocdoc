@@ -12,6 +12,7 @@
 
    background/requirements
    design/design
+   installation/installation
    usage/index
    reference/reference
 
