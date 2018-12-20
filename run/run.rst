@@ -17,7 +17,47 @@
     > cd /nwpprod
     > ./run_obsproc.py -s 2018120100 -e 2018121512
 
-:code:`run_obsproc.py` 调用 :code:`run_rap_obsproc.bash`, :code:`run_rap_obsproc.bash` 的内容如下:
+:code:`run_obsproc.py` 的内容如下：
+
+.. code-block :: python
+
+    #!/usr/bin/python
+    # -*- coding: UTF-8 -*-
+    
+    import argparse
+    from datetime import datetime, timedelta
+    import os
+    import sys
+
+    parser = argparse.ArgumentParser()                                               
+
+    parser.add_argument("--start", "-s", type=str, required=True)
+    parser.add_argument("--end", "-e", type=str, required=True)
+
+    args = parser.parse_args()
+
+    start_time = datetime.strptime(args.start, "%Y%m%d%H")
+    end_time   = datetime.strptime(args.end, "%Y%m%d%H")
+
+    current_time = start_time
+
+    while (current_time <= end_time):
+        print "Processing : ", current_time
+        cyc = current_time.strftime("%H");
+        com_date = "/nwprod/com/date/t" + cyc + "z"
+        with open(com_date, "w") as file:
+           file.write("nwprod" + current_time.strftime("%Y%m%d%H"))
+        with open(com_date, "r") as file:
+           print file.read()
+        os.system("run_rap_obsproc.bash " + cyc)
+        #print("run_rap_obsproc.bash " + cyc)
+        current_time = current_time + timedelta(hours=12)
+
+:code:`run_obsproc.py` 通过修改 :code:`/nwprod/com/date/t??z` 文件，来指令质控程序对哪个时间的观测资料进行质控；
+
+:code:`run_obsproc.py` 调用 :code:`run_rap_obsproc.bash`, :code:`run_rap_obsproc.bash` 会读取 :code:`/nwprod/com/date/t??z` 的内容， 并且从命令行获取 :code:`cyc` 来得到时间信息；
+
+:code:`run_rap_obsproc.bash` 会进一步设置各种参数来控制质控，内容如下:
 
 .. code-block :: bash
 
@@ -39,7 +79,7 @@
     export COMIN_ROOT=${ROOT_DIR}/com
     export COMROOT=${ROOT_DIR}/com
 
-    # default root directory path to $TANK, $EPRM and $QPRM
+    # default root directory path to $TANK
     export DCOMROOT=${ROOT_DIR}/dcom
 
     # Where is the utility scripts
