@@ -206,8 +206,9 @@ Decoders Source code
     * :code:`uadcod_significant_temp.f`
     * :code:`uadcod_significant_wind.f`
 
-3. The top control program is :code:`dccimissupr.c`, the code snippet is.
-::
+3. The top control program is :code:`dccimissupr.c`, the code snippet is
+
+..code-block:: fortran
 
     /*
     ** Call the decoding routine.
