@@ -12,7 +12,7 @@
 
 3. 运行 **dump** 和 **obsproc**
 
-..code-block:: console
+..code-block :: bash
 
     > cd /nwpprod
     > ./run_obsproc.py -s 2018120100 -e 2018121512
