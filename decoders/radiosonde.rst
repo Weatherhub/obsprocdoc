@@ -97,7 +97,7 @@ XML format data is looks like::
     <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="3065" Lat_Dev="-0.01" Lon_Dev="-0.056" PRS_HWC="233" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="45" WIN_S="16" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
     <R Station_Name="达县" Country="中国" Province="四川省" City="达州市" Cnty="市辖区" Town="" Year_Data="2018" Mon_Data="9" Day_Data="1" Hour_Data="12" Station_Id_C="57328" Station_Id_d="57328" Lat="31.2" Lon="107.5" Alti="344.9" V07030="999998" PRS_Sensor_Alti="999998" HEITH_BALLON="999998" Nation_Code="2250" Year="2018" Mon="9" Day="1" Hour="11" Min="16" Second="0" Sensor_type="3" RSON_Type="33" SIR_Corr="6" SYSTAT="3" SST="999999" CLO_COV_LM="999998" CLO_Height_LoM="999998" CLO_Fome_Low="999998" CLO_FOME_MID="999998" CLO_Fome_High="999998" DATA_CATE="TB" EVSS="2048" Time_Dev_WQ="3545" Lat_Dev="-0.08" Lon_Dev="-0.116" PRS_HWC="156" GPH="999998" Heigh_Alti="999998" TEM="999999" DPT="999999" DTD="999999" WIN_D="35" WIN_S="23" WIN_SHE_B1Km="999998" WIN_She_A1Km="999998" Q_Lat_Dev="999999" Q_Lon_Dev="999999" Q_PRS_HWC="999999" Q_GPH="999999" Q_Heigh_Alti="999999" Q_TEM="999999" Q_DPT="999999" Q_DTD="999999" Q_WIN_D="999999" Q_WIN_S="999999" Q_WIN_SHE_B1Km="999999" Q_WIN_She_A1Km="999999"/>
 
-.. note::
+.. note ::
 
     The above sample include Mandatory levels reports and Significant levels reports, CIMISS uses *EVSS* to identify the type.
 
@@ -106,14 +106,14 @@ XML format data is looks like::
     * EVSS="2048"   : Significant levels wind
     * EVSS="8192"   : Significant levels temperature
 
-.. warning::
+.. warning ::
 
     The order of each entry in XML file has to be sorted from surface to top (See *PRS_HWC* in the XML file)
 
 XML extractor
 =============
 
-.. note::
+.. note ::
 
     The python module :code:`xmltodict` is required.
     XML extractor shoud be ran outside of Singularity container, we will inlcude the :code:`xmltodict` in container.
@@ -192,7 +192,7 @@ The content of :code:`upr_data` is::
 Decoders Source code
 =====================
 
-.. note::
+.. note ::
 
     Decoders should run inside of Singularity container.
 
@@ -240,7 +240,7 @@ Decoders Source code
 
     }
 
-.. note::
+.. note ::
 
     * The :code:`lndtbl`, :code:`shptbl` are not used actually, although they are required as arguments and read in.
     * The path and file name of :code:`../../upr_data` file are hard-wired in the subroutines.
@@ -299,7 +299,7 @@ Decode and convert to BUFR format
     ./decod_dccmissupr -d decod_dccimissupr.log -b 240 -c $1 sonde.land.tbl sonde.ship.tbl bufrtab.002
     ls -la tmp/*
 
-.. note::
+.. note ::
 
     * -c 180901/1200 : Set the **current time** (201809011200) used to calculate the time departures of the obs. data.
     * -b 240 : Number of hours to decode prior to "current" time (default)
@@ -323,7 +323,7 @@ Transfer bufr data to BUFR Tanks
     > ls -al /nwprod/dcom/us007003/20180901/b002/xx001
     -rw-r--r-- 1 vagrant vagrant 36304 Sep 10 16:29 /nwprod/dcom/us007003/20180901/b002/xx001
 
-.. note::
+.. note ::
 
     * if environmental variable **SCREEN=ON** :
         * Define **Run Time** is the system time when the tranjb is running.
