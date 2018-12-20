@@ -1,5 +1,5 @@
 ===================
-PREPBUFR Processing
+质量控制
 ===================
 
 .. contents ::
@@ -44,7 +44,7 @@ Most of the observation types in the PREPBUFR file are associated with quality m
 `质控标识表 <http://www.emc.ncep.noaa.gov/mmb/data_processing/prepbufr.doc/table_7.htm>`_ contains the code table of quality markers.  These quality markers apply to all observation types in the PREPBUFR file.
 
 提取质控标识
-===========
+==============
 
 执行以下脚本::
 
