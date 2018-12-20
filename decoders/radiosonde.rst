@@ -6,8 +6,8 @@ Radiosonde
 
 .. contents ::
 
-Directory structure
-===================
+Data directory structure
+===========================
 
 The radiosonde data is organized as XML files every 12 hours ::
 
@@ -116,23 +116,28 @@ XML extractor
 .. note::
 
     The python module :code:`xmltodict` is required.
+    XML extractor shoud be ran outside of Singularity container, we will inlcude the :code:`xmltodict` in container.
 
 A python code is used to extract the desired information from this XML files::
 
+    > cd /home/zwtd/nwprod/decoders
+    > rm upr_data
+    > ./read_cimiss_upr.py -f /home/data/raw/cimiss/UPAR_CHN_MUL_FTM/201811271200.xml
+
+If you want to batch process number of xml files, you can use following command::
+
     > # This command will find all xml files and prcessing the file one by one
-    > # This command should be ran outside of Singularity container
     > rm upr_data
     > find /home/data/raw/cimiss/UPAR_CHN_MUL_FTM -name "*.xml" -size +0 -exec python read_cimiss_upr.py -f {} \;
 
-The information we want to extract from XML is.
-::
+The information we want to extract from XML is::
 
     for item in doc['DS']['R']:
         print item['@Station_Id_d'], item['@EVSS'], item['@Lat'], item['@Lon'], item['@Alti'], \
         item['@Year'], item['@Mon'], item['@Day'], item['@Hour'], item['@Min'], item['@Second'], \
         item['@PRS_HWC'], item['@GPH'], item['@TEM'], item['@DPT'], item['@WIN_D'], item['@WIN_S']
 
-the content of :code:`upr_data` is::
+The content of :code:`upr_data` is::
 
     > less upr_data
     56046 131072 33.7667 99.65 3968 2018 9 1 11 16 0 631 999999 10.2 8.8 0 0
@@ -184,20 +189,24 @@ the content of :code:`upr_data` is::
     57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 233 999998 999999 999999 45 16
     57328 2048 31.2 107.5 344.9 2018 9 1 11 16 0 156 999998 999999 999999 35 23
 
-Source code
-===========
+Decoders Source code
+=====================
+
+.. note::
+
+    Decoders should run inside of Singularity container.
 
 1. Source code directory::
 
     > cd /nwprod/decoders/decod_dccimissupr/sorc
 
-2. Subroutines to decode Radiosonde data
+2. Ket subroutines to decode Radiosonde data
 
     * uadcod_mandatory.f
     * uadcod_significant_temp.f
     * uadcod_significant_wind.f
 
-3. The top control is in :code:`dccimissupr.c`, the code snippet is.
+3. The top control program is :code:`dccimissupr.c`, the code snippet is.
 ::
 
     /*
@@ -234,8 +243,8 @@ Source code
 
 .. note::
 
-    * The :code:`lndtbl`, :code:`shptbl` are not used, although they are required as arguments and read in.
-    * The path and file name of :code:`upr_data` file are hard-wired in the subroutines.
+    * The :code:`lndtbl`, :code:`shptbl` are not used actually, although they are required as arguments and read in.
+    * The path and file name of :code:`../../upr_data` file are hard-wired in the subroutines.
 
 4. Compile the code
 ::
@@ -261,13 +270,24 @@ Decode and convert to BUFR format
     lrwxr-xr-x 1 vagrant vagrant     30 Aug 30 04:15 sonde.ship.tbl -> ../dictionaries/sonde.ship.tbl
     drwxr-xr-x 1 vagrant vagrant     96 Sep 10 16:29 tmp
 
-2. run the decoder script
-::
+2. we provide a script to run the decoder in batch mode::
 
-    > run.ksh
+    > ./run_dccimissupr.py -s 2018121600 -e 2018121700
+
+.. note::
+
+    * given the starting datetime and ending datetime, it iterates all cycles (00Z, 12Z)
+    * the interval is 12 hours for radiosonde
+    * this script call run.ksh
 
     > cat run.ksh
     #!/bin/bash
+    if [[ $# -eq 0 ]]; then
+        echo "No time cycle is given"
+        echo "Usage:: run.ksh 180430/1000"
+        exit
+    fi
+
     export DBNBUFRT=120    # control the frequency to flush the bufr
     export TRANJB=/nwprod/ush/tranjb
     export tank_dir=/nwprod/dcom/us007003    # used by TRANJB
@@ -275,7 +295,7 @@ Decode and convert to BUFR format
     export DBNROOT=`pwd`
     rm tmp/*
     rm decod_dccimissupr.log
-    ./decod_dccmissupr -d decod_dccimissupr.log -b 240 -c 180901/1200 sonde.land.tbl sonde.ship.tbl bufrtab.002
+    ./decod_dccmissupr -d decod_dccimissupr.log -c $1 sonde.land.tbl sonde.ship.tbl bufrtab.002
     ls -la tmp/*
 
 .. note::
