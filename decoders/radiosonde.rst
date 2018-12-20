@@ -297,7 +297,7 @@ Decode and convert to BUFR format
     export DBNROOT=`pwd`
     rm tmp/*
     rm decod_dccimissupr.log
-    ./decod_dccmissupr -d decod_dccimissupr.log -c $1 sonde.land.tbl sonde.ship.tbl bufrtab.002
+    ./decod_dccmissupr -d decod_dccimissupr.log -b 240 -c $1 sonde.land.tbl sonde.ship.tbl bufrtab.002
     ls -la tmp/*
 
 .. note::
@@ -309,7 +309,7 @@ Decode and convert to BUFR format
 
 3. The generated BUFR format file will be saved at
 
-.. code_block bash::
+.. code-block bash::
 
     > ls -la tmp/BUFR.0.raob.1.12381.1536602459.61
     -rw-rw-r-- 1 vagrant vagrant 20360 Sep 10 18:01 tmp/BUFR.0.raob.1.12381.1536602459.61
