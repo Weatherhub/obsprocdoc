@@ -2,11 +2,9 @@
 运行步骤
 ===================
 
-.. contents ::
-
 1. 信息的提取
     
-    请参考 :doc:`Decoders <decoders>` 。
+    请参考 :doc:`Decoders <radiosonde>` 。
 
 2. 解码
     
