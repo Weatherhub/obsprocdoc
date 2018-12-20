@@ -9,7 +9,7 @@
 
 使用git版本管理系统，获取源代码
 
-* 在 :code:`$HOME` 目录下建立克隆obsproc::
+* 在 :code:`$HOME` 目录下建立克隆 :code:`obsproc` ::
     
     > git clone https://github.com/LongRunWeather/NCEP-obsproc.git nwprod
 
@@ -17,19 +17,19 @@
 
     > cd nwprod
 
-* 克隆lib::
+* 克隆 :code:`lib` ::
 
     > git clone https://github.com/LongRunWeather/NCEP-libs.git lib
 
-* 克隆util::
+* 克隆 :code:`util` ::
 
     > git clone https://github.com/LongRunWeather/NCEP-util.git util
 
-* 克隆rap::
+* 克隆 :code:`rap` ::
 
     > git clone https://github.com/LongRunWeather/NCEP-rap.git rap.v4.0.2
 
-* 克隆decoders::
+* 克隆 :code:`decoders` ::
 
     > git clone https://github.com/LongRunWeather/NCEP-Decoders.git decoders
 
@@ -42,7 +42,7 @@
  
 * 目录结构应该是::
 
-    > cpaessxinzhang-mpro:LR-App-Store xinzhang$ tree -L 1 nwprod
+    > tree -L 1 nwprod
     nwprod
     ├── build2.bash
     ├── build_obsproc.bash
