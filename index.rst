@@ -15,6 +15,7 @@
    repository/repositories
    installation/installation
    usage/index
+   postprocess/postprocess
    reference/reference
 
 Indices and tables
