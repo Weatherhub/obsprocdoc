@@ -23,7 +23,7 @@ Purpose
 
 * QC: SDM purge (or keep) flags, reject list flags
 
-    * /nwprod/dcom/us007003/sdmedit can be used to filtered out specific reports
+    * :code:`/nwprod/dcom/us007003/sdmedit` can be used to filtered out specific reports
 
 * The product is :code:`/nwprod/com/NET/prod/RUN.yyyymmdd/MODEL.tcycz.TYPE.tmMM.bufr_d`, where:
 
