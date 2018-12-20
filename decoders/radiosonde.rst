@@ -280,7 +280,7 @@ Decode and convert to BUFR format
     * the interval is 12 hours for radiosonde
     * this script call run.ksh
 
-.. code-block:: console
+.. code-block:: bash
 
     > cat run.ksh
     #!/bin/bash
@@ -305,6 +305,7 @@ Decode and convert to BUFR format
     * -c 180901/1200 : Set the **current time** (201809011200) used to calculate the time departures of the obs. data.
     * -b 240 : Number of hours to decode prior to "current" time (default)
     * The observations with date/time between **current time** - 240 hours and  **current time** + 3 are **kept**.
+
 
  3. The generated BUFR format file will be saved at
  ::
