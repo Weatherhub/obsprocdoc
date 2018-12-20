@@ -4,11 +4,6 @@
 
 .. contents ::
 
-观测信息的提取
-^^^^^^^^^^^^^
-    
-    请参考 :doc:`Decoders <../decoders/index>` 。
-
 观测的解码
 ^^^^^^^^^^
     
