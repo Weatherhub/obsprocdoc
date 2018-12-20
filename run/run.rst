@@ -6,7 +6,7 @@
 
 1. 信息的提取
     
-    请参考 :doc:
+    请参考 :doc:`Decoders <decoders>` 。
 
 2. 解码
     
