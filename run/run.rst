@@ -2,15 +2,20 @@
 运行步骤
 ===================
 
-1. 信息的提取
+.. contents ::
+
+信息的提取
+^^^^^^^^^
     
     请参考 :doc:`Decoders <radiosonde>` 。
 
-2. 解码
+解码
+^^^^^
     
     请参考
 
-3. 运行 **dump** 和 **obsproc**
+运行 **dump** 和 **obsproc**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block :: bash
 
@@ -108,7 +113,8 @@
     export GESROOT=/nwprod/com/gfs
     ${ROOT_DIR}/obsproc_rap.v3.0.0/jobs/JRAP_PREP
 
-4. 检查运行结果
+检查运行结果
+^^^^^^^^^^^
 
 .. code :: bash
 
