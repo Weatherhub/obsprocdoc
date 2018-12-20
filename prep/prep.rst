@@ -33,8 +33,29 @@ Purpose
     * **MM** is 00 for all types except RUN/MODEL=ndas/ndas where it can be 12, 09, 06 or 03
 
 
-Prep Procedure
+质控步骤
 ==============
+
+1. PREPDATA
+    总体质量控制
+
+2. GLERLADJ
+    对大的水体周边观测的调整
+
+3. PREVENTS 
+    针对气候模式使用的观测资料的质控
+
+4. CQCBUFR
+    对探空观测的质控
+
+5. PROFCQC
+    对飞机观测的质控
+
+6. PREPACQC
+    对风廓线仪挂册的质控
+    
+7. OIQCBUFR
+    Buddy Check
 
 
 Quality Marker Table
