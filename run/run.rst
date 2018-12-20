@@ -7,7 +7,7 @@
 观测的解码
 ^^^^^^^^^^
     
-    请参考 :doc:`Decoders <../decoders/index>` 
+    请参考 :doc:`观测的解码 <../decoders/index>` 
 
 运行 **dump** 和 **obsproc**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
