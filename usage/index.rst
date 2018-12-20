@@ -10,3 +10,4 @@
    ../decoders/index.rst
    ../dump/dump.rst
    ../prep/prep.rst
+   ../run/run.rst
