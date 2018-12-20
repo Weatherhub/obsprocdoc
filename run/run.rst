@@ -4,15 +4,15 @@
 
 .. contents ::
 
-信息的提取
-^^^^^^^^^
+观测信息的提取
+^^^^^^^^^^^^^
     
-    请参考 :doc:`Decoders <radiosonde>` 。
+    请参考 :doc:`Decoders <../decoders/index>` 。
 
-解码
-^^^^^
+观测的解码
+^^^^^^^^^^
     
-    请参考
+    请参考 :doc:`Decoders <../decoders/index>` 
 
 运行 **dump** 和 **obsproc**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
