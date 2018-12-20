@@ -273,13 +273,13 @@ Decode and convert to BUFR format
 
     > ./run_dccimissupr.py -s 2018121600 -e 2018121700
 
-.. note::
+.. note ::
 
     * given the starting datetime and ending datetime, it iterates all cycles (00Z, 12Z)
     * the interval is 12 hours for radiosonde
     * this script call run.ksh
 
-.. code-block:: bash
+.. code-block :: bash
 
     > cat run.ksh
     #!/bin/bash
