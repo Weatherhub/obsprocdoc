@@ -12,6 +12,7 @@
 
    background/requirements
    design/design
+   repository/repositories
    installation/installation
    usage/index
    reference/reference
