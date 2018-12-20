@@ -21,7 +21,7 @@
 
 .. code-block :: bash
 
-    Singularity intel.simg:/nwprod> cat run_rap_obsproc.bash 
+    > cat run_rap_obsproc.bash 
     #!/bin/bash -e
 
     ulimit -s unlimited
@@ -79,31 +79,50 @@
 
     export PROCESS_GRIBFLDS="NO"
     export PROCESS_REMOREST="NO"
-    
+
     # Only conventional data being processed
     export JOB_NUMBER=1
-    
+
     # Which group will be processed
     export DUMP_group2="YES"
     export DUMP_group3="YES"
     export DUMP_group4="NO"
     export DUMP_group5="NO"
-    
+
     export MPMD=NO
     export CHGRP_RSTPROD=NO
-    
+
     export POE="NO"
-    
+
     export NET="rap"
     export cyc=$1
     export job=${NET}_dump_${cyc}
-    
+
     . ${ROOT_DIR}/versions/obsproc_rap.ver
     ${ROOT_DIR}/obsproc_rap.v3.0.0/jobs/JRAP_DUMP
     ${ROOT_DIR}/obsproc_rap.v3.0.0/jobs/JRAP_DUMP_POST
-    
+
     export GETGUESS="YES"
     export NEMSIO_IN=.true.
     export job=${NET}_obsproc_${cyc}
     export GESROOT=/nwprod/com/gfs
     ${ROOT_DIR}/obsproc_rap.v3.0.0/jobs/JRAP_PREP
+
+4. 检查运行结果
+
+.. code :: bash
+
+    > find /nwprod/com/rap -name rap.t??z.prepbufr.tm00 -exec ls -la {} \;
+    -rw-r--r--. 1 zwtd zwtd 142960 Dec 17 17:17 /nwprod/com/rap/prod/rap.20180706/rap.t00z.prepbufr.tm00
+    -rw-r--r--. 1 zwtd zwtd 102472 Dec 17 13:19 /nwprod/com/rap/prod/rap.20180430/rap.t00z.prepbufr.tm00
+    -rw-r--r--. 1 zwtd zwtd 114824 Dec 17 16:32 /nwprod/com/rap/prod/rap.20180430/rap.t12z.prepbufr.tm00
+    -rw-r--r--. 1 zwtd zwtd 125584 Dec 17 16:33 /nwprod/com/rap/prod/rap.20180501/rap.t00z.prepbufr.tm00
+    -rw-r--r--. 1 zwtd zwtd 159824 Dec 17 16:33 /nwprod/com/rap/prod/rap.20180501/rap.t12z.prepbufr.tm00
+    -rw-r--r--. 1 zwtd zwtd 130096 Dec 17 16:34 /nwprod/com/rap/prod/rap.20180502/rap.t00z.prepbufr.tm00
+    -rw-r--r--. 1 zwtd zwtd 166208 Dec 17 16:34 /nwprod/com/rap/prod/rap.20180502/rap.t12z.prepbufr.tm00
+    -rw-r--r--. 1 zwtd zwtd 163704 Dec 17 16:35 /nwprod/com/rap/prod/rap.20180503/rap.t00z.prepbufr.tm00
+    -rw-r--r--. 1 zwtd zwtd 171776 Dec 17 16:35 /nwprod/com/rap/prod/rap.20180503/rap.t12z.prepbufr.tm00
+    -rw-r--r--. 1 zwtd zwtd 152832 Dec 17 16:36 /nwprod/com/rap/prod/rap.20180504/rap.t00z.prepbufr.tm00
+    -rw-r--r--. 1 zwtd zwtd 159344 Dec 17 16:37 /nwprod/com/rap/prod/rap.20180504/rap.t12z.prepbufr.tm00
+    ...
+    ...
