@@ -202,9 +202,9 @@ Decoders Source code
 
 2. Ket subroutines to decode Radiosonde data
 
-    * uadcod_mandatory.f
-    * uadcod_significant_temp.f
-    * uadcod_significant_wind.f
+    * :code:`uadcod_mandatory.f`
+    * :code:`uadcod_significant_temp.f`
+    * :code:`uadcod_significant_wind.f`
 
 3. The top control program is :code:`dccimissupr.c`, the code snippet is.
 ::
@@ -279,6 +279,8 @@ Decode and convert to BUFR format
     * given the starting datetime and ending datetime, it iterates all cycles (00Z, 12Z)
     * the interval is 12 hours for radiosonde
     * this script call run.ksh
+
+.. code-block:: console
 
     > cat run.ksh
     #!/bin/bash
