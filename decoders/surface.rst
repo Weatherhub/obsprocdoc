@@ -117,7 +117,7 @@ Source code
 
 1. Source code directory::
 
-    > cd /nwprod/decoders/decod_dccimisssurf_v3.0.0/sorc
+    > cd /nwprod/decoders/decod_dccimisssurf/sorc
 
 2. Subroutines to decode surface data
 
