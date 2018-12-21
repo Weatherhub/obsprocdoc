@@ -67,9 +67,22 @@ xml format data is looks like
 xml extractor
 ================
 
+.. note ::
+
+    The python module :code:`xmltodict` is required.
+    XML extractor shoud be ran outside of Singularity container, we will inlcude the :code:`xmltodict` in container.
+
 A python code is used to extract the desired information from this xml file::
 
-    > python read_cimiss_surface.py > cimiss_data_surface
+    > cd /home/zwtd/nwprod/decoders
+    > rm cimiss_data_surface
+    > ./read_cimiss_surface.py -f /home/data/raw/cimiss/SURF_CHN_MAIN_MIN/201812161200.xml
+
+If you want to batch process number of xml files, you can use following command::
+
+    > # This command will find all xml files and prcessing the file one by one
+    > rm upr_data
+    > find /home/data/raw/cimiss/SURF_CHN_MAIN_MIN -name "*.xml" -size +0 -exec python read_cimiss_surface.py -f {} \;
 
 The information we want to extract from xml is.
 ::
@@ -108,7 +121,7 @@ Source code
 
 2. Subroutines to decode surface data
 
-    * lsdcod.f
+    * :code:`lsdcod.f`
 
 .. note::
 
@@ -126,21 +139,30 @@ Decode and convert to BUFR format
 1.  enter into the exec directory
 ::
 
-    > cd /nwprod/decoders/decod_dccimisssurf_v3/exec
+    > cd /nwprod/decoders/decod_dccimisssurf/exec
     > ls -la
-    total 4048
-    drwxr-xr-x  9 xinzhang  staff      288 Sep 21 18:46 .
-    drwxr-xr-x  6 xinzhang  staff      192 Sep 21 18:46 ..
-    lrwxr-xr-x  1 xinzhang  staff       34 Sep 21 18:46 bufrtab.000 -> ../../decod_shared/fix/bufrtab.000
-    -rw-r--r--  1 xinzhang  staff  1121683 Sep 21 18:46 cimiss.tbl
-    lrwxr-xr-x  1 xinzhang  staff       31 Sep 21 18:46 decod_WMO.Res40.headers -> ../parm/decod_WMO.Res40.headers
-    -rwxr-xr-x  1 xinzhang  staff   940680 Sep 21 18:46 decod_dccimisssurf
-    -rw-r--r--  1 xinzhang  staff      446 Sep 21 18:46 decod_dccimisssurf.log
-    -rwxr-xr-x  1 xinzhang  staff      386 Sep 21 18:46 run.ksh
-    drwxr-xr-x  3 xinzhang  staff       96 Sep 21 18:46 tmp
+    total 2028
+    drwxr-xr-x. 3 zwtd zwtd     211 Dec 20 22:45 .
+    drwxr-xr-x. 6 zwtd zwtd      82 Dec 20 22:42 ..
+    lrwxrwxrwx. 1 zwtd zwtd      34 Dec  9 23:48 bufrtab.000 -> ../../decod_shared/fix/bufrtab.000
+    -rw-r--r--. 1 zwtd zwtd 1121683 Dec  9 23:48 cimiss.tbl
+    lrwxrwxrwx. 1 zwtd zwtd      31 Dec  9 23:48 decod_WMO.Res40.headers -> ../parm/decod_WMO.Res40.headers
+    -rwxr-xr-x. 1 zwtd zwtd  940696 Dec 20 00:24 decod_dccimiss
+    -rw-r--r--. 1 zwtd zwtd     462 Dec 20 22:45 decod_dccimiss.log
+    -rwxr-xr-x. 1 zwtd zwtd     484 Dec 20 00:30 run.ksh
+    -rwxr-xr-x. 1 zwtd zwtd     776 Dec 20 22:44 run_dccimisssurf.py
+    drwxr-xr-x. 2 zwtd zwtd      58 Dec 20 22:45 tmp
 
 
-2. run the decoder script
+2. we provide a script to run the decoder in batch mode::
+
+    > ./run_dccimisssurf.py -s 2018121600 -e 2018121700 -i 1
+
+.. note ::
+
+    * given the starting datetime and ending datetime, it iterates all cycles (every 1 hours)
+    * the  units of interval is hour (-i)
+    * this script call run.ksh
 ::
 
     > run.ksh
@@ -153,7 +175,7 @@ Decode and convert to BUFR format
     export DBNROOT=`pwd`
     rm tmp/*
     rm decod_dccimiss.log
-    ./decod_dccimiss -d decod_dccimiss.log -b 240 -c 180901/1600 bufrtab.000 cimiss.tbl decod_WMO.Res40.headers
+    ./decod_dccimiss -d decod_dccimiss.log -b 240 -c $1 bufrtab.000 cimiss.tbl decod_WMO.Res40.headers
     ls -la tmp/*
     
     BUFR_FILES=$(echo tmp/BUFR*)
@@ -173,7 +195,7 @@ Decode and convert to BUFR format
  3. The generated BUFR format file will be saved at
  ::
 
-    > ls -la tmp/BUFR.0.aircraft.1.1933.1537419287.73 
+    > ls -la tmp
     -rw-r--r--  1 xinzhang  staff  4199744 Sep 21 18:45 tmp/BUFR.0.cimiss.1.6436.1536097072.8
 
 
