@@ -20,4 +20,4 @@
 
 .. note ::
     
-     可以进入 :code:`/nwpprod/util/sorc/bufrqc.fd`，修改程序 :code:`prepbufr_decode_all_evn.f90` 以获得个性化输出。ss s
+     可以进入 :code:`/nwpprod/util/sorc/bufrqc.fd`，修改程序 :code:`prepbufr_decode_all_evn.f90` 以获得个性化输出。
