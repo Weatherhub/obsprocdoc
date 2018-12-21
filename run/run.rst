@@ -9,6 +9,15 @@
     
     请参考 :doc:`观测的解码 <../decoders/index>` 
 
+下载全球模式预报资料
+^^^^^^^^^^^^^^^^^^
+
+    * 下载地址 :code:`ftp://ftp.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/gdas.ccyymmdd/` 或 :code:`ftp://ftp.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/gfs.ccyymmdd/`
+    * 下载文件：
+        * :code:`gdas.t??z.atmf???.nemsio`
+        * :code:`gfs.t??z.atmf???.nemsio`
+    * 具体下载那些文件，由分析的 :code:`cycle` 决定
+
 运行 **dump** 和 **obsproc**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
