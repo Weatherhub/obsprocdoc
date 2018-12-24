@@ -276,4 +276,4 @@ Transfer bufr data to BUFR Tanks
 
         > /nwprod/util/exec/debufr /nwprod/dcom/us007003/20180912/b004/xx003
 
-      the output is in *debufr.out*.
+      the output is in :code:`debufr.out`.
