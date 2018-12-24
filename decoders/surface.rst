@@ -161,8 +161,10 @@ Decode and convert to BUFR format
 .. note ::
 
     * given the starting datetime and ending datetime, it iterates all cycles (every 1 hours)
-    * the  units of interval is hour (-i)
+    * the units of interval is hour (-i)
     * this script call run.ksh
+
+3. run the decoder script
 ::
 
     > run.ksh
@@ -188,12 +190,12 @@ Decode and convert to BUFR format
 
 .. note::
 
-    * -c 180901/1600 : Set the **current time** (201809011600) used to calculate the time departures of the obs. data.
+    * -c $1 : Set the **current time** (201809011600) used to calculate the time departures of the obs. data.
     * -b 240 : Number of hours to decode prior to "current" time (default)
     * The observations with date/time between **current time** - 240 hours and  **current time** + 3 are **kept**.
 
- 3. The generated BUFR format file will be saved at
- ::
+4. The generated BUFR format file will be saved at
+::
 
     > ls -la tmp
     -rw-r--r--  1 xinzhang  staff  4199744 Sep 21 18:45 tmp/BUFR.0.cimiss.1.6436.1536097072.8

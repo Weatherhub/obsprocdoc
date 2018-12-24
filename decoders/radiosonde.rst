@@ -301,7 +301,7 @@ Decode and convert to BUFR format
 
 .. note ::
 
-    * -c 180901/1200 : Set the **current time** (201809011200) used to calculate the time departures of the obs. data.
+    * -c $1 : Set the **current time** (201809011200) used to calculate the time departures of the obs. data.
     * -b 240 : Number of hours to decode prior to "current" time (default)
     * The observations with date/time between **current time** - 240 hours and  **current time** + 3 are **kept**.
 

@@ -4,7 +4,7 @@ Aircraft
 
 .. contents ::
 
-Directory structure
+Data directory structure
 ===================
 
 The Aircraft data is organized as MICAPS files every hour ::
@@ -91,16 +91,29 @@ MICAPS format data is looks like ::
 MICAPS extractor
 ================
 
+.. note ::
+
+    The python module :code:`codecs` is required.
+    MICAPS extractor shoud be ran outside of Singularity container, we will inlcude the :code:`codecs` in container.
+
 A python code is used to extract the desired information from this MICAPS file::
 
-    > python read_micaps_amdar.py > micaps_amdar_data
+    > cd /home/zwtd/nwprod/decoders
+    > rm micaps_amdar_data
+    > ./read_micaps_amdar.py -f /home/data/raw/cimiss/UPAR_ARD_G_MUL_MUT_TAB/20181216/20181216120000.txt
+
+If you want to batch process number of MICAPS files, you can use following command::
+
+    > # This command will find all MICAPS files and prcessing the file one by one
+    > rm micaps_amdar_data
+    > find /home/data/raw/cimiss/UPAR_ARD_G_MUL_MUT_TAB -name "201812161*.txt" -size +0 -exec python read_micaps_amdar.py -f {} \;
 
 The information we want to extract from MICAPS is.
 ::
 
     print '{:>8}'.format(flightID), year, month, day, hour, minute, lat, lon, height, temperature, wdir, wspd, vv, turb
 
-the content of **micaps_amdar_data** is::
+the content of :code:`micaps_amdar_data` is::
 
     > less micaps_amdar_data
       HL8236 2018 9 12 2 0 33.445 126.36 740.0 20.0 179.0 1.0 9999.0 9999.0
@@ -145,22 +158,25 @@ the content of **micaps_amdar_data** is::
        99999 2018 9 12 2 2 45.5916 -73.5933 9999.0 13.35 317.0 3.6 9999.0 9999.0
      SQXIOYZA 2018 9 12 2 0 33.308 -111.69 2185.0 20.85 237.0 7.7 9999.0 9999.0
 
+Decoder source code
+=====================
 
-Source code
-===========
+.. note ::
+
+    Decoders should run inside of Singularity container.
 
 1. Source code directory::
 
-    > cd /nwprod/decoders/decod_dcmicapsamdar_v3.0.0/sorc
+    > cd /nwprod/decoders/decod_dcmicapsamdar/sorc
 
 2. Subroutines to decode Aircraft data
 
-    * afdcod.f
+    * :code:`afdcod.f`
 
 .. note::
 
-    * The *pirep.tbl*,  *airep.tbl* are not used, although they are required as arguments and read in.
-    * The path and file name of *micaps_amdar_data* file are hard coded in the subroutines.
+    * The :code:`pirep.tbl`,  :code:`airep.tbl` are not used, although they are required as arguments and read in.
+    * The path and file name of :code:`cmicaps_amdar_data` file are hard coded in the subroutines.
 
 4. Compile the code
 ::
@@ -186,8 +202,18 @@ Decode and convert to BUFR format
     -rwxr-xr-x  1 xinzhang  staff     410 Sep 21 18:45 run.ksh
     drwxr-xr-x  3 xinzhang  staff      96 Sep 21 18:45 tmp
 
+2. we provide a script to run the decoder in batch mode::
 
-2. run the decoder script
+    > ./run_dcmicapsamdar.py -s 2018121612 -e 2018121700 -i 1
+
+.. note ::
+
+    * given the starting datetime and ending datetime, it iterates all cycles (every 1 hours)
+    * the units of interval is hour (-i)
+    * this script call run.ksh
+
+
+3. run the decoder script
 ::
 
     > run.ksh
@@ -201,7 +227,7 @@ Decode and convert to BUFR format
     export DBNROOT=`pwd`
     rm tmp/*
     rm decod_dcmicapsadmar.log
-    ./decod_dcmicapsadmar -v 4 -d decod_dcmicapsadmar.log  -b 240 -c 180912/0200 pirep.tbl airep.tbl bufrtab.004
+    ./decod_dcmicapsadmar -v 4 -d decod_dcmicapsadmar.log  -b 240 -c $1 pirep.tbl airep.tbl bufrtab.004
     ls -la tmp/*
 
     BUFR_FILES=$(echo tmp/BUFR*)
@@ -214,12 +240,12 @@ Decode and convert to BUFR format
 
 .. note::
 
-    * -c 180912/0200 : Set the **current time** (201809120200) used to calculate the time departures of the obs. data.
+    * -c $1 : Set the **current time** (201809120200) used to calculate the time departures of the obs. data.
     * -b 240 : Number of hours to decode prior to "current" time (default)
     * The observations with date/time between **current time** - 240 hours and  **current time** + 3 are **kept**.
 
- 3. The generated BUFR format file will be saved at
- ::
+4. The generated BUFR format file will be saved at
+::
 
     > ls -la tmp/BUFR.0.aircraft.1.1933.1537419287.73 
     -rw-r--r--  1 xinzhang  staff  1806552 Sep 21 18:45 tmp/BUFR.0.aircraft.1.1933.1537419287.73
