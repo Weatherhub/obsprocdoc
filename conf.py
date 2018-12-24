@@ -101,6 +101,7 @@ html_static_path = ['_static']
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
 html_favicon = 'images/longrun.ico'
+html_logo = 'images/longrun.png'
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
