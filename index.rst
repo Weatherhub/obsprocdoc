@@ -6,11 +6,11 @@
 观测资料的解码、质量控制和格式转换
 ============================
 
+- :doc:`许可协议 <license>`
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
-- :doc:`许可协议 <license>`
 
    background/requirements
    design/design
