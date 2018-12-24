@@ -274,6 +274,6 @@ Transfer bufr data to BUFR Tanks
     * No duplicate checking
     * Interested users can use utility *debufr* to check the content of the bufr file::
 
-        > /nwprod/util/execdebufr /nwprod/dcom/us007003/20180912/b004/xx003
+        > /nwprod/util/exec/debufr /nwprod/dcom/us007003/20180912/b004/xx003
 
       the output is in *debufr.out*.
