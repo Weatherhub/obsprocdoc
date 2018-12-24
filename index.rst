@@ -10,6 +10,8 @@
    :maxdepth: 2
    :caption: Contents:
 
+- :doc:`许可协议 <license>`
+
    background/requirements
    design/design
    repository/repositories
