@@ -186,14 +186,14 @@
 
 .. figure:: ./images/radiosonde.png
    :align: center
-   :width: 400
+   :width: 400px
    :alt: 探空观测的分布（2018121612）
 
-探空观测的分布（2018121612）
+   探空观测的分布（2018121612）
 
 .. figure:: ./images/surface.png
    :align: center
-   :width: 400
+   :width: 400ps
    :alt: 地面观测的分布（2018121612）
 
-地面观测的分布（2018121612）
+   地面观测的分布（2018121612）
