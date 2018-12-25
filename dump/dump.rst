@@ -17,7 +17,7 @@ Purpose
 
 * Geographically filtered
 
-    * environmental variable "**LALO=0*" is used to turn off the filter
+    * environmental variable "**LALO=0**" is used to turn off the filter
 
 * Duplicate checked
 

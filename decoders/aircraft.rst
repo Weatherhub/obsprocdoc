@@ -5,7 +5,7 @@ Aircraft
 .. contents ::
 
 Data directory structure
-===================
+=============================
 
 The Aircraft data is organized as MICAPS files every hour ::
 

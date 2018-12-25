@@ -186,21 +186,21 @@
 
 .. figure:: ./images/radiosonde.png
    :align: center
-   :width: 400px
+   :width: 50%
    :alt: 探空观测的分布（2018121612 +/- 1.0 hour）
 
    探空观测的分布（2018121612  +/- 1.0 hour）
 
 .. figure:: ./images/surface.png
    :align: center
-   :width: 400px
+   :width: 50%
    :alt: 地面观测的分布（2018121612 +/- 1.0 hour）
 
    地面观测的分布（2018121612 +/- 1.0 hour）
 
 .. figure:: ./images/aircraft.png
    :align: center
-   :width: 400px
+   :width: 50%
    :alt: 飞机观测的分布（2018121612 +/- 1.0 hour）
 
    飞机观测的分布（2018121612 +/- 1.0 hour）
