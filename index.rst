@@ -4,21 +4,20 @@
    contain the root `toctree` directive.
 
 观测资料的解码、质量控制和格式转换
-============================
-
-- :doc:`许可协议 <license>`
+=======================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    background/requirements
-   design/design
+   design/index
    repository/repositories
    installation/installation
    usage/index
    postprocess/postprocess
    reference/reference
+   license
 
 Indices and tables
 ==================

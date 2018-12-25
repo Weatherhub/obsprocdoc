@@ -5,8 +5,8 @@
 .. toctree::
    :maxdepth: 2
 
-   repositories.rst
-   installation.rst
+   ../repository/repositories.rst
+   ../installation/installation.rst
    ../decoders/index.rst
    ../dump/dump.rst
    ../prep/prep.rst

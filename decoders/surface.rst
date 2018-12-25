@@ -4,8 +4,8 @@ Surface
 
 .. contents ::
 
-Directory structure
-===================
+Data directory structure
+===========================
 
 The Surface data is organized as xml files every 15 minutes ::
 
@@ -112,8 +112,8 @@ the content of :code:`cimiss_data_surface` is::
       878120 36.0133 108.1183 1129 2018 9 1 16 0 876.3 17.5 99 329 1.4
       751675 29.6344 119.5692 95 2018 9 1 16 0 999999 24.7 999999 333 0
 
-Source code
-===========
+Decoder source code
+====================
 
 1. Source code directory::
 

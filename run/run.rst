@@ -10,9 +10,11 @@
     请参考 :doc:`观测的解码 <../decoders/index>` 
 
 下载全球模式预报资料
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    * 下载地址 :code:`ftp://ftp.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/gdas.ccyymmdd/` 或 :code:`ftp://ftp.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/gfs.ccyymmdd/`
+    * 下载地址
+        * :code:`ftp://ftp.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/gdas.ccyymmdd/`
+        * :code:`ftp://ftp.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/gfs.ccyymmdd/`
     * 下载文件：
         * :code:`gdas.t??z.atmf???.nemsio`
         * :code:`gfs.t??z.atmf???.nemsio`
@@ -158,7 +160,7 @@
     ${ROOT_DIR}/obsproc_rap.v3.0.0/jobs/JRAP_PREP
 
 检查运行结果
-^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 .. code :: bash
 
@@ -176,3 +178,18 @@
     -rw-r--r--. 1 zwtd zwtd 159344 Dec 17 16:37 /nwprod/com/rap/prod/rap.20180504/rap.t12z.prepbufr.tm00
     ...
     ...
+
+观测资料的分布
+^^^^^^^^^^^^^^^^
+
+利用 :code:`MET` 的绘图功能，可以绘制各种观测的分布， 例如：
+
+.. figure:: ./images/radiosonde.png
+   :align: center
+
+探空观测的分布（2018121612）
+
+.. figure:: ./images/surface.png
+   :align: center
+
+地面观测的分布（2018121612）
