@@ -13,7 +13,7 @@
 
     > find /home/zwtd/nwprod/com/rap/prod -name "rap.t??z.prepbufr.tm00" -exec python read_qcf.py -f {} \;
 
-提取的质控代码如下，如飞机观测::
+提取的质控代码如下，如飞机观测:
 
 .. code :: console
 
@@ -33,7 +33,7 @@
     PQM QQM TQM ZQM WQM NUL PWQ PMQ
     [2.0 -- 13.0 2.0 -- -- -- --]
 
-如探空观测::
+如探空观测:
 
 .. code :: console
 
@@ -90,7 +90,7 @@
     34    12.50 [2.0 -- -- -- 2.0 -- -- --]
     35    10.70 [2.0 -- -- -- 2.0 -- -- --]
 
-如地面加密观测::
+如地面加密观测:
 
 .. code :: console
 
