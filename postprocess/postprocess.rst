@@ -11,7 +11,7 @@
 
 1. 执行以下脚本::
 
-    > find /home/zwtd/nwprod/com/rap/prod -name "rap.t??z.prepbufr.tm00" -exec python read_qcf.py -f {} \;
+> find /home/zwtd/nwprod/com/rap/prod -name "rap.t??z.prepbufr.tm00" -exec python read_qcf.py -f {} \;
 
 提取的质控代码如下，如飞机观测:
 
