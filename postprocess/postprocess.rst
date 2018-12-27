@@ -9,7 +9,10 @@
 
 为了了解质控的步骤和结果，可以使用如下几种方法提取质控码：
 
-1. 执行 :code:`python` 脚本::
+:code:`python` 脚本
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code :: bash
 
     > find /home/zwtd/nwprod/com/rap/prod -name "rap.t??z.prepbufr.tm00" -exec python read_qcf.py -f {} \;
 
@@ -119,7 +122,10 @@
 
 
 
-2. 执行 :code:`Fortran` 程序::
+执行 :code:`Fortran` 程序
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code :: bash
 
     > ln -fs  /nwprod/com/rap/prod/rap.20181216/rap.t12z.prepbufr.tm00 prepbufr
     > /nwprod/util/exec/bufrqc
