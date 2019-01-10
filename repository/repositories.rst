@@ -38,7 +38,8 @@
     > wget https://www.unidata.ucar.edu/downloads/gempak/latest/gempak-7.4.3.tar.gz
     > mkdir -p gempak
     > cd gempak
-    > tar -xvzf gempak-7.4.3.tar.gz
+    > tar -xvzf ../gempak-7.4.3.tar.gz
+    > rm ../gempak-7.4.3.tar.gz
  
 * 目录结构应该是::
 
