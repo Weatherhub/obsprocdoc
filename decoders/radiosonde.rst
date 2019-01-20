@@ -128,7 +128,7 @@ If you want to batch process number of xml files, you can use following command:
 
     > # This command will find all xml files and prcessing the file one by one
     > rm upr_data
-    > find /home/data/raw/cimiss/UPAR_CHN_MUL_FTM -name "*.xml" -size +0 -exec python read_cimiss_upr.py -f {} \;
+    > find /home/data/raw/cimiss/UPAR_CHN_MUL_FTM -newermt "$(date '+%Y-%m-%d %H:%M:%S' -d '1 day ago')" -name "*.xml" -size +0 -exec python read_cimiss_upr.py -f {} \;
 
 The information we want to extract from XML is::
 
