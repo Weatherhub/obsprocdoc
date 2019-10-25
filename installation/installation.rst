@@ -396,7 +396,7 @@ For retrospective decoding
 
 * :code:`nwprod/decoders/decod_shared/lib/bridge/dc/dcrtim.f`:
 
-    全文替换:code:`MXDYB`为:code:`MNDYB`，并将:code:`MNDYB`设为31， 并修改如下代码段：
+    全文替换 :code:`MXDYB` 为 :code:`MNDYB` ，并将 :code:`MNDYB` 设为31， 并修改如下代码段：
     
     .. code-block:: bash
     
@@ -408,7 +408,7 @@ For retrospective decoding
     
     修改这段代码的目的是，构建Bulletin时间的时候，不会因为运行日期和资料日期相差太远而失败
 
-* 所有:code:`decoder`的:code:`*.c`主程序:
+* 所有 :code:`decoder` 的 :code:`*.c` 主程序:
     
     如 :code:`nwprod/decoders/decod_dccimissupr/sorc/dccimissupr.c`:
     
