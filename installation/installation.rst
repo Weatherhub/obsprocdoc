@@ -388,3 +388,35 @@ Building decoders
     └── decod_dcusnd
     decoders/decod_dczsfc/exec
     └── decod_dczsfc
+
+For retrospective decoding
+==============================
+
+经常需要对历史资料进行解码和质控，:code:`obsproc`缺省只对当前运行时刻之前10天的资料进行解码，所以，当需要处理历史资料（如1年以前）时，有以下几段代码需要修改：
+
+* :code:`nwprod/decoders/decod_shared/lib/bridge/dc/dcrtim.f`:
+
+    全文替换:code:`MXDYB`为:code:`MNDYB`，并将:code:`MNDYB`设为31， 并修改如下代码段：
+    
+    .. code-block:: bash
+    
+        IF ( ndyb .gt. MNDYB ) THEN
+            nb = ndyb
+        ELSE
+            nb = MNDYB
+        END IF
+    
+    修改这段代码的目的是，构建Bulletin时间的时候，不会因为运行日期和资料日期相差太远而失败
+
+* 所有:code:`decoder`的:code:`*.c`主程序:
+    
+    如：:code:`nwprod/decoders/decod_dccimissupr/sorc/dccimissupr.c`:
+    
+    .. code-block:: bash
+    
+        int     ndfhr1  = 878400;  // 原值为240（10天），改为100年
+        int     ndfhr2  = 878400;  // 原值为240（10天），改为100年
+        
+    修改这段代码的目的是，处理运行日期100年内的观测资料。
+
+    
