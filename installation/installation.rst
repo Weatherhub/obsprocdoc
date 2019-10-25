@@ -410,7 +410,7 @@ For retrospective decoding
 
 * 所有:code:`decoder`的:code:`*.c`主程序:
     
-    如：:code:`nwprod/decoders/decod_dccimissupr/sorc/dccimissupr.c`:
+    如 :code:`nwprod/decoders/decod_dccimissupr/sorc/dccimissupr.c`:
     
     .. code-block:: bash
     
