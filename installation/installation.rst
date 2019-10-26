@@ -113,6 +113,8 @@ Building NCEP libraries
 Building `gempak <https://www.unidata.ucar.edu/software/gempak/>`_
 ==================================================================
 
+* User can clone gempak from `gempak_github <https://github.com/Unidata/gempak/>`_ and follow the instruction to build and install.
+
 * Enter into gempak directory::
 
     > cd /nwprod/gempak
